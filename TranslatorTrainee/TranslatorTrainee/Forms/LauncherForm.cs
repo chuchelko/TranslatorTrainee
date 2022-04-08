@@ -26,5 +26,8 @@ public partial class LauncherForm : Form
     private void trainBtn_Click(object sender, EventArgs e)
     {
         //Вызов формы с тренировками
+        Forms.TrainingForm trainingForm = new Forms.TrainingForm();
+        trainingForm.ShowDialog();
+
     }
 }
