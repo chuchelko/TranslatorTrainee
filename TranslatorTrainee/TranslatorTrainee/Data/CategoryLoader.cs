@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace TranslatorTrainee.Data
 {
-    [Serializable]
     internal class CategoryLoader
     {
         public List<Category>? _categories = new();
@@ -21,27 +20,32 @@ namespace TranslatorTrainee.Data
             fileName = filename;
         }
 
-        private async Task LoadCategoriesAsync()
+        public void WhenClosing()
         {
-            using(var reader = new FileStream(fileName, FileMode.Open))
+            Task.Run(async () => await WriteCategoriesAsync()).Wait();
+        }
+
+        public async Task LoadCategoriesAsync()
+        {
+            using(var reader = new FileStream(fileName, FileMode.Open, FileAccess.Read))
             {
                 JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions
                 {
                     Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.All),
-                    WriteIndented = true
+                    WriteIndented = true,
                 };
                 _categories = await JsonSerializer.DeserializeAsync<List<Category>>(reader, jsonSerializerOptions);
             }
         }
 
-        private async Task WriteCategoriesAsync()
+        public async Task WriteCategoriesAsync()
         {
-            using(var reader = new FileStream(fileName, FileMode.Open))
+            using(var reader = new FileStream(fileName, FileMode.Truncate, FileAccess.Write))
             {
                 JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions
                 {
                     Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.All),
-                    WriteIndented = true
+                    WriteIndented = true,
                 };
                 await JsonSerializer.SerializeAsync(reader, _categories);
             }
