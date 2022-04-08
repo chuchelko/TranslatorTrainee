@@ -1,0 +1,17 @@
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\TranslatorTrainee.exe
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\TranslatorTrainee.deps.json
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\TranslatorTrainee.runtimeconfig.json
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\TranslatorTrainee.dll
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\ref\TranslatorTrainee.dll
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\TranslatorTrainee.pdb
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.csproj.AssemblyReference.cache
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.Launcher.resources
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.csproj.GenerateResource.cache
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.AssemblyInfoInputs.cache
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.AssemblyInfo.cs
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.csproj.CoreCompileInputs.cache
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.dll
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\ref\TranslatorTrainee.dll
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.pdb
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.genruntimeconfig.cache
