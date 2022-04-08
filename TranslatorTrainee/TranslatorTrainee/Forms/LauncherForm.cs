@@ -5,6 +5,7 @@ public partial class LauncherForm : Form
     public LauncherForm()
     {
         InitializeComponent();
+        DoubleBuffered = true;
         //FormBorderStyle = FormBorderStyle.None;
     }
 
