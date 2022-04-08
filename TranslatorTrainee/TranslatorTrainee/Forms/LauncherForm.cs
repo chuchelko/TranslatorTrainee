@@ -1,8 +1,8 @@
 namespace TranslatorTrainee;
 
-public partial class Launcher : Form
+public partial class LauncherForm : Form
 {
-    public Launcher()
+    public LauncherForm()
     {
         InitializeComponent();
     }

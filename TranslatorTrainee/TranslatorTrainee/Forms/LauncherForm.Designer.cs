@@ -1,6 +1,6 @@
 ﻿namespace TranslatorTrainee;
 
-partial class Launcher
+partial class LauncherForm
 {
     /// <summary>
     ///  Required designer variable.
