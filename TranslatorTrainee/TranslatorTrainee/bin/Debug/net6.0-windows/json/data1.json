@@ -1,32 +1,32 @@
 [
   {
-    "count": 1,
-    "fileName": "latinism.json",
-    "name": "Латинизмы",
-    "difficulty": 4.3
+    "Count": 1,
+    "FileName": "latinism.json",
+    "Name": "Латинизмы",
+    "Difficulty": 4.3
   },
   {
-    "count": 1,
-    "fileName": "numerals.json",
-    "name": "Числительные",
-    "difficulty": 7.3
+    "Count": 1,
+    "FileName": "numerals.json",
+    "Name": "Числительные",
+    "Difficulty": 7.3
   },
   {
-    "count": 1,
-    "fileName": "compression.json",
-    "name": "Компрессия",
-    "difficulty": 2.3
+    "Count": 1,
+    "FileName": "compression.json",
+    "Name": "Компрессия",
+    "Difficulty": 2.3
   },
   {
-    "count": 1,
-    "fileName": "multiTask.json",
-    "name": "Многозадачность",
-    "difficulty": 9.3
+    "Count": 1,
+    "FileName": "multiTask.json",
+    "Name": "Многозадачность",
+    "Difficulty": 9.3
   },
   {
-    "count": 1,
-    "fileName": "phraseologisms.json",
-    "name": "Фразеологизмы",
-    "difficulty": 10
+    "Count": 1,
+    "FileName": "phraseologisms.json",
+    "Name": "Фразеологизмы",
+    "Difficulty": 10
   }
 ]

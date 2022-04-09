@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace TranslatorTrainee.Data
 {
     [Serializable]
-    internal class Question
+    public class Question
     {
         public string Type { get; set; }
         public string Text { get; set; }

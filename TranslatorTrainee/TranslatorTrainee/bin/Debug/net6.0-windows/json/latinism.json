@@ -1,23 +1,25 @@
-[
+{
+	"Questions":
+	[
 	{
-		"type": "text",
-		"text": "Officer Smith has never used his BATON",
-		"rightAnswer": "Дубинка",
-		"wrongAnswers": [
-			"Хлеб",
-			"Маркер",
-			"Эстафетная палочка"
+		"Type": "text",
+		"Text": "He is the ARBITER at the top and the trouble-shooter in social conflicts below",
+		"RightAnswer": "Судья",
+		"WrongAnswers": [
+			"Арбитр",
+			"Властитель",
+			"Законодатель"
 		]
 	},
-	{
-		"type": "text",
-		"text": "Officer Smith has never used his BATON",
-		"rightAnswer": "Дубинка",
-		"wrongAnswers": [
-			"Хлеб",
-			"Маркер",
-			"Эстафетная палочка"
-		]
-	},
-
-]
+  {
+    "Type": "text",
+    "Text": "All the Middle East must contribute to the ARTICULATION of this vision",
+    "RightAnswer": "Формулирование",
+    "WrongAnswers": [
+      "Артикуляция",
+      "Сочленение",
+      "Произношение"
+    ]
+  },
+  ]
+}

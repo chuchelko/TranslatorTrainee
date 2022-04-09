@@ -37,7 +37,5 @@ public partial class LauncherForm : Form
 
     private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-        QuestionLoader loader = new QuestionLoader(new Category() { FileName = "latinism.json" });
-        label1.Text = loader.GetRandomQuestion().Text;
     }
 }
