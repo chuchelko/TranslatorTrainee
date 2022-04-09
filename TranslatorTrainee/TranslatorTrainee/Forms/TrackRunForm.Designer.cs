@@ -30,6 +30,7 @@ partial class TrackRunForm
     {
             this.button = new System.Windows.Forms.Button();
             this.timerLabel = new System.Windows.Forms.Label();
+            this.timeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button
@@ -52,15 +53,29 @@ partial class TrackRunForm
             this.timerLabel.Size = new System.Drawing.Size(0, 41);
             this.timerLabel.TabIndex = 1;
             // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Location = new System.Drawing.Point(384, 260);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(50, 20);
+            this.timeLabel.TabIndex = 2;
+            this.timeLabel.Text = "label1";
+            this.timeLabel.Visible = false;
+            // 
             // TrackRunForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.button);
+            this.MaximumSize = new System.Drawing.Size(818, 497);
+            this.MinimumSize = new System.Drawing.Size(818, 497);
             this.Name = "TrackRunForm";
             this.Text = "TrackRunForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TrackRunForm_FormClosed);
             this.Load += new System.EventHandler(this.TrackRunForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -71,4 +86,5 @@ partial class TrackRunForm
 
     private Button button;
     private Label timerLabel;
+    private Label timeLabel;
 }
