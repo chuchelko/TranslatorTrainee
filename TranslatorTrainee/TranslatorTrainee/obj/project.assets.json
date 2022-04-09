@@ -684,7 +684,6 @@
         "ref/MonoTouch10/_._",
         "ref/net461/System.Drawing.Common.dll",
         "ref/netcoreapp3.0/System.Drawing.Common.dll",
-        "ref/netcoreapp3.0/System.Drawing.Common.xml",
         "ref/netstandard2.0/System.Drawing.Common.dll",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
@@ -692,7 +691,6 @@
         "ref/xamarinwatchos10/_._",
         "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
         "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
-        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
         "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
         "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
         "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
@@ -1471,25 +1469,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emil\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emil\\Desktop\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee.csproj",
       "projectName": "TranslatorTrainee",
-      "projectPath": "C:\\Users\\Emil\\Desktop\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee.csproj",
-      "packagesPath": "C:\\Users\\Emil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emil\\Desktop\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\obj\\",
+      "projectPath": "C:\\Users\\User\\Source\\Repos\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Source\\Repos\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Emil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0-windows7.0"
@@ -1545,7 +1538,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
