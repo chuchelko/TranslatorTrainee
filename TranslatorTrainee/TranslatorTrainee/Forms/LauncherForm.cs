@@ -15,7 +15,8 @@ public partial class LauncherForm : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
-        // Вызов формы с блицом
+        BlitzForm form = new BlitzForm();
+        form.ShowDialog();
     }
     private void panel1_Paint(object sender, PaintEventArgs e)
     {

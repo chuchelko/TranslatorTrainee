@@ -8,8 +8,6 @@ public partial class TrainingForm : Form
 	public event EventHandler QuestionChanged;
 	public event EventHandler AnswerChanged;
 
-	private Panel origQ, origA;
-
 	private int qstCh;
 	public int QuestionChoice
 	{
@@ -36,9 +34,9 @@ public partial class TrainingForm : Form
 		}
 	}
 
-	private Data.CategoryLoader cloader;
-	private Data.TaskPanelsPainter painter;
-	private Data.TaskPanelConstructor TPC;
+	private CategoryLoader cloader;
+	private TaskPanelsPainter painter;
+	private TaskPanelConstructor TPC;
 
 	public TrainingForm()
 	{
@@ -54,17 +52,14 @@ public partial class TrainingForm : Form
 			await cloader.LoadCategoriesAsync();
 		}catch (Exception ex) { }
 
-		comboBox1.Items.Clear();
-		comboBox1.Items.AddRange(cloader._categories?.ToArray());
-		comboBox1.SelectedIndex = 0;
+		categoriesBox.Items.Clear();
+		categoriesBox.Items.AddRange(cloader._categories?.ToArray());
+		categoriesBox.SelectedIndex = 0;
 
 		painter = new Data.TaskPanelsPainter(QuestionPanel.CreateGraphics(), AnswerPanel.CreateGraphics());
 		//QuestionChanged += painter.QuestionHandler;
 		painter.QuestionHandler();
 		AnswerChanged += painter.AnswerHandler;
-
-		origQ = QuestionPanel;
-		origA = AnswerPanel;
 	}
 
 	private void testBtn_Click(object sender, EventArgs e)
@@ -96,9 +91,9 @@ public partial class TrainingForm : Form
 	private void qstnBtnLeft_Click(object sender, EventArgs e)
 	{
 
-    }
+	}
 
-    private void answBtnLeft_Click(object sender, EventArgs e)
+	private void answBtnLeft_Click(object sender, EventArgs e)
 	{
 		AnswerChoice -= 1;
 	}
@@ -111,7 +106,7 @@ public partial class TrainingForm : Form
 		answBtnLeft.Enabled = answBtnLeft.Visible = false;
 		answBtnRight.Enabled = answBtnRight.Visible = false;
 
-		TPC = new Data.TaskPanelConstructor((QuestionPeek)QuestionChoice, (AnswerPeek)AnswerChoice, QuestionPanel, AnswerPanel, cloader?._categories[comboBox1.SelectedIndex]);
+		TPC = new Data.TaskPanelConstructor((QuestionPeek)QuestionChoice, (AnswerPeek)AnswerChoice, QuestionPanel, AnswerPanel, cloader?._categories[categoriesBox.SelectedIndex]);
 
 		ScoreButton.Visible = true;
 		ScoreButton.Text = $"{TaskPanelConstructor.score}";
@@ -121,7 +116,7 @@ public partial class TrainingForm : Form
 		TaskPanel.Controls.Add(QuestionPanel);
 		
 		TaskPanel.Controls.Remove(AnswerPanel);
-		AnswerPanel = TPC.AnswerPanelCreate();
+		AnswerPanel = TPC.BlitzAnswerPanelCreate();
 		TaskPanel.Controls.Add(AnswerPanel);
 		TaskPanel.Refresh();
 

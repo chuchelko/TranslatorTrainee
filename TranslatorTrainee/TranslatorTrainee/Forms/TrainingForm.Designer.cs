@@ -30,7 +30,7 @@ partial class TrainingForm
 	/// </summary>
 	private void InitializeComponent()
 	{
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.categoriesBox = new System.Windows.Forms.ComboBox();
             this.testBtn = new System.Windows.Forms.Button();
             this.tstBtn2 = new System.Windows.Forms.Button();
             this.TaskPanel = new System.Windows.Forms.Panel();
@@ -44,13 +44,13 @@ partial class TrainingForm
             this.TaskPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // categoriesBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(199, 35);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(386, 28);
-            this.comboBox1.TabIndex = 0;
+            this.categoriesBox.FormattingEnabled = true;
+            this.categoriesBox.Location = new System.Drawing.Point(199, 35);
+            this.categoriesBox.Name = "categoriesBox";
+            this.categoriesBox.Size = new System.Drawing.Size(386, 28);
+            this.categoriesBox.TabIndex = 0;
             // 
             // testBtn
             // 
@@ -163,7 +163,7 @@ partial class TrainingForm
             this.Controls.Add(this.TaskPanel);
             this.Controls.Add(this.tstBtn2);
             this.Controls.Add(this.testBtn);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.categoriesBox);
             this.Name = "TrainingForm";
             this.Text = "TrainingForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TrainingForm_FormClosing);
@@ -175,7 +175,7 @@ partial class TrainingForm
 
     #endregion
 
-    private ComboBox comboBox1;
+    private ComboBox categoriesBox;
     private Button testBtn;
     private Button tstBtn2;
     private Panel TaskPanel;
