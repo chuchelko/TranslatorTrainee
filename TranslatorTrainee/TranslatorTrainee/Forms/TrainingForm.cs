@@ -33,6 +33,7 @@ public partial class TrainingForm : Form
 	private Data.CategoryLoader cloader;
 	private int qstnChoice = 0;
 	private Data.TaskPanelsPainter painter;
+
 	public TrainingForm()
 	{
 		InitializeComponent();
@@ -62,12 +63,10 @@ public partial class TrainingForm : Form
 
 	private void testBtn_Click(object sender, EventArgs e)
 	{
-
 	}
 
 	private void tstBtn2_Click(object sender, EventArgs e)
 	{
-
 	}
 
 	private async void TrainingForm_FormClosing(object sender, FormClosingEventArgs e)

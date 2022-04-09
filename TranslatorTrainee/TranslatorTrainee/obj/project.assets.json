@@ -91,6 +91,21 @@
           "lib/netstandard2.0/NAudio.Core.dll": {}
         }
       },
+      "NAudio.Lame/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "NAudio.Core": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/NAudio.Lame.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NAudio.Lame.dll": {}
+        },
+        "build": {
+          "build/NAudio.Lame.targets": {}
+        }
+      },
       "NAudio.Midi/2.0.1": {
         "type": "package",
         "dependencies": {
@@ -576,6 +591,23 @@
         "naudio.core.nuspec"
       ]
     },
+    "NAudio.Lame/2.0.1": {
+      "sha512": "MhVKOsKFCo9o/ghReT7x0dOKILPRN3crZjBP85vz02jfDeFPmSGXGdNIXN0FYIPDKH7irFcI9q0IeYlXQwJfaQ==",
+      "type": "package",
+      "path": "naudio.lame/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "build/NAudio.Lame.targets",
+        "build/libmp3lame.32.dll",
+        "build/libmp3lame.64.dll",
+        "lib/netstandard2.0/NAudio.Lame.dll",
+        "lib/netstandard2.0/NAudio.Lame.pdb",
+        "naudio.lame.2.0.1.nupkg.sha512",
+        "naudio.lame.nuspec"
+      ]
+    },
     "NAudio.Midi/2.0.1": {
       "sha512": "A5pQerGAmtNNfSMkGaRacqBJG1xg4bjQE0XaxsO3/rhEE80NLUN6gQm+x/m7ZGbSoPUB5fav2jW3tZkdPadZ7w==",
       "type": "package",
@@ -652,6 +684,7 @@
         "ref/MonoTouch10/_._",
         "ref/net461/System.Drawing.Common.dll",
         "ref/netcoreapp3.0/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.xml",
         "ref/netstandard2.0/System.Drawing.Common.dll",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
@@ -659,6 +692,7 @@
         "ref/xamarinwatchos10/_._",
         "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
         "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
         "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
         "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
         "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
@@ -1432,24 +1466,30 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "NAudio >= 2.0.1",
+      "NAudio.Lame >= 2.0.1",
       "VisioForge.DotNet.Core.TRIAL >= 15.1.12"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\Emil\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee.csproj",
+      "projectUniqueName": "C:\\Users\\Emil\\Desktop\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee.csproj",
       "projectName": "TranslatorTrainee",
-      "projectPath": "C:\\Users\\User\\Source\\Repos\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Source\\Repos\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\obj\\",
+      "projectPath": "C:\\Users\\Emil\\Desktop\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee.csproj",
+      "packagesPath": "C:\\Users\\Emil\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Emil\\Desktop\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Emil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0-windows7.0"
@@ -1478,6 +1518,10 @@
             "target": "Package",
             "version": "[2.0.1, )"
           },
+          "NAudio.Lame": {
+            "target": "Package",
+            "version": "[2.0.1, )"
+          },
           "VisioForge.DotNet.Core.TRIAL": {
             "target": "Package",
             "version": "[15.1.12, )"
@@ -1501,7 +1545,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

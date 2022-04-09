@@ -31,11 +31,6 @@ public partial class TrackRunForm : Form
 
     private void button_Click(object sender, EventArgs e)
     {
-        if (playing)
-            button.Text = "Stop";
-        else
-            button.Text = "Start";
-        playing = !playing;
         if(timer.Enabled == false)
         {
             progress = new Progress<string>(s => timerLabel.Text = s);
@@ -53,14 +48,15 @@ public partial class TrackRunForm : Form
     WaveOut waveOut;
     TimeOnly duration;
     System.Timers.Timer soundDurationTimer = new(1000);
+    SpeechToText speechToText = new SpeechToText();
+    
     private void Timer_Elapsed(object? sender, System.Timers.ElapsedEventArgs e)
     {
         progress.Report((3-time.Second).ToString());
         if(time.Second == 3)
         {
             progress.Report("");
-            path = Directory.GetFiles(path, "*.wav")[0];
-            soundPlayer = new WaveFileReader(path);
+            soundPlayer = new WaveFileReader(Directory.GetFiles(path, "*.wav")[0]);
             duration = new TimeOnly(soundPlayer.TotalTime.Hours, soundPlayer.TotalTime.Minutes, soundPlayer.TotalTime.Seconds);
             waveOut = new WaveOut();
             waveOut.Init(soundPlayer);
@@ -68,7 +64,9 @@ public partial class TrackRunForm : Form
             time = new TimeOnly();
             soundDurationTimer.Elapsed += SoundDurationTimer_Elapsed;
             soundDurationTimer.Start();
-            (sender as System.Timers.Timer)!.Stop();
+            speechToText.StartRecordingAudio(this);
+            timer.Elapsed -= Timer_Elapsed;
+            timer.Stop();
         }
         time = time.Add(new TimeSpan(0, 0, 1));
     }
@@ -77,6 +75,11 @@ public partial class TrackRunForm : Form
     {
         timeLabel.Invoke(delegate () { timeLabel.Visible = true; });
         timeLabel.Invoke(delegate () { timeLabel.Text = $"{time.Minute}:{time.Second}/{duration.Minute}:{duration.Second}"; });
+        if(time.Second == 5)
+        {
+            speechToText.StopRecordingAudio();
+            label1.Invoke(delegate () { label1.Text = speechToText.GetTextFromSpeech(); });
+        }
         time = time.Add(new TimeSpan(0, 0, 1));
 
     }
@@ -84,9 +87,16 @@ public partial class TrackRunForm : Form
     private void TrackRunForm_FormClosed(object sender, FormClosedEventArgs e)
     {
         soundDurationTimer.Stop();
-        waveOut.Stop();
-        waveOut.Dispose();
-        soundPlayer.Close();
-        soundPlayer.Dispose();
+        if(waveOut != null)
+        {
+            waveOut.Stop();
+            waveOut.Dispose();
+        }
+        if(soundPlayer != null)
+        {
+            soundPlayer.Close();
+            soundPlayer.Dispose();
+
+        }
     }
 }
