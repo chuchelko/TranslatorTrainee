@@ -1,5 +1,3 @@
-{
-	"Questions":
 	[
 	{
 		"Type": "text",
@@ -9,6 +7,16 @@
 			"Арбитр",
 			"Властитель",
 			"Законодатель"
+		]
+	},
+	{
+		"Type": "text",
+		"Text": "You`re this school`s ARBITER of taste",
+		"RightAnswer": "Законодатель",
+		"WrongAnswers": [
+			"Судья",
+			"Властитель",
+			"Арбитр"
 		]
 	},
   {
@@ -30,6 +38,45 @@
       "Капитальный",
       "Главный"
     ]
+  },
+  {
+    "Type": "text",
+    "Text": "The building requires CAPITAL repairs",
+    "RightAnswer": "Капиталтный",
+    "WrongAnswers": [
+      "Прописной",
+      "Столичный",
+      "Главный"
+    ]
+  },
+    {
+    "Type": "text",
+    "Text": "Direct speech begins with a CAPITAL letter after a narrative comment",
+    "RightAnswer": "Прописной",
+    "WrongAnswers": [
+      "Главный",
+      "Столичный",
+      "Капитальный"
+    ]
+  },
+  {
+    "Type": "text",
+    "Text": "A military COURT and an appeals COURT agreed to release him on bail in October",
+    "RightAnswer": "Суд",
+    "WrongAnswers": [
+      "Корт",
+      "Палата",
+      "Инстанция"
+    ]
+  },
+  {
+    "Type": "text",
+    "Text": "A synthetic grass tennis COURT is cost effective",
+    "RightAnswer": "Корт",
+    "WrongAnswers": [
+      "Суд",
+      "Палата",
+      "Инстанция"
+    ]
   }
   ]
-}
