@@ -1,0 +1,25 @@
+{
+	"Questions":
+	[
+	{
+		"Type": "text",
+		"Text": "He is the ARBITER at the top and the trouble-shooter in social conflicts below",
+		"RightAnswer": "Судья",
+		"WrongAnswers": [
+			"Арбитр",
+			"Властитель",
+			"Законодатель"
+		]
+	},
+  {
+    "Type": "text",
+    "Text": "All the Middle East must contribute to the ARTICULATION of this vision",
+    "RightAnswer": "Формулирование",
+    "WrongAnswers": [
+      "Артикуляция",
+      "Сочленение",
+      "Произношение"
+    ]
+  },
+  ]
+}

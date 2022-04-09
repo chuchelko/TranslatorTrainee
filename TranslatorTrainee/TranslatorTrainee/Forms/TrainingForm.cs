@@ -45,7 +45,7 @@ public partial class TrainingForm : Form
 
 	private async void TrainingForm_Load(object sender, EventArgs e)
 	{
-		cloader = new Data.CategoryLoader("../../../Jsons/data1.json");
+		cloader = new Data.CategoryLoader(Directory.GetCurrentDirectory() + "\\json\\data1.json");
 
 		try
 		{

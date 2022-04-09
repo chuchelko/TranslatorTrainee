@@ -32,7 +32,7 @@ namespace TranslatorTrainee.Data
             {
                 case TaskPanelsPainter.QuestionPeek.TextQuestion:
                     var label = new Label();
-                    label.Text = QuestionLoader.GetRandomQuestion().Text;
+                    //label.Text = QuestionLoader.GetRandomQuestion().Text;
                     label.Location = new Point(panel.Width / 2 - label.Width, panel.Height / 2);
                     panel.Controls.Add(label);
                     break;

@@ -1,0 +1,25 @@
+{
+	"Questions":
+[
+	{
+		"Type": "text",
+		"Text": "There was a tiny COFFEE TABLE in that room",
+		"RightAnswer": "Журнальный столик",
+		"WrongAnswers": [
+			"Кофейный столик",
+			"Маркер",
+			"Эстафетная палочка"
+		]
+	},
+	{
+		"Type": "text",
+		"Text": "Officer Smith has never used his BATON",
+		"RightAnswer": "Дубинка",
+		"WrongAnswers": [
+			"Хлеб",
+			"Маркер",
+			"Эстафетная палочка"
+		]
+	},
+]
+}

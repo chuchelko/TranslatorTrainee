@@ -3,34 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace TranslatorTrainee.Data
 {
     internal class QuestionLoader
     {
-        private string _foldername = "";
+        public SetOfQuestions Questions;
 
-        public QuestionLoader(string foldername, Category category)
+        public QuestionLoader(Category category)
         {
-            _foldername = foldername;
             Load(category);
         }
 
         private void Load(Category category)
         {
-            var directorylst = new List<string>();
-            Directory
-                .GetDirectories(category.Name, "*", SearchOption.AllDirectories)
-                .ToList()
-                .ForEach(d => directorylst.Add(d)); 
-
-
-
+            string file = Directory
+                .GetFiles(Directory.GetCurrentDirectory() + "\\json", category.FileName, SearchOption.AllDirectories)[0];
+            using var reader = new FileStream(file, FileMode.Open, FileAccess.Read);
+            Questions = JsonSerializer.Deserialize<SetOfQuestions>(reader)!;
         }
-
-        internal static Question GetRandomQuestion()
+        public Question GetRandomQuestion()
         {
-            throw new NotImplementedException();
+            return Questions.Questions[new Random().Next(0, Questions.Questions.Count)];
         }
     }
 }
