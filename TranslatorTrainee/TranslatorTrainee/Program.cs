@@ -1,3 +1,5 @@
+using TranslatorTrainee.Forms;
+
 namespace TranslatorTrainee;
 
 internal static class Program

@@ -1,0 +1,23 @@
+[
+	{
+		"type": "text",
+		"question": "Officer Smith has never used his BATON",
+		"rightAnswer": "Дубинка",
+		"wrongAnswers": [
+			"Хлеб",
+			"Маркер",
+			"Эстафетная палочка"
+		]
+	},
+	{
+		"type": "text",
+		"question": "Officer Smith has never used his BATON",
+		"rightAnswer": "Дубинка",
+		"wrongAnswers": [
+			"Хлеб",
+			"Маркер",
+			"Эстафетная палочка"
+		]
+	},
+
+]

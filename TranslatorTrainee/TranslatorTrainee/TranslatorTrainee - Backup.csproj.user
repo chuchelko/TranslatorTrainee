@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Forms\LauncherForm.cs">
+<<<<<<< HEAD
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SpeakingForm.cs">
+=======
+>>>>>>> 1658ca7b3905b87fca2dc6e8d2bd2f42373b04d6
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

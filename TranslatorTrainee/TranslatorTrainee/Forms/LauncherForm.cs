@@ -1,3 +1,5 @@
+using TranslatorTrainee.Forms;
+
 namespace TranslatorTrainee;
 
 public partial class LauncherForm : Form
@@ -20,7 +22,8 @@ public partial class LauncherForm : Form
 
     private void speakingBtn_Click(object sender, EventArgs e)
     {
-        //Âûחמג פמנלû ס המנמזךאלט
+        SpeakingForm form  = new SpeakingForm();
+        form.ShowDialog();
     }
 
     private void trainBtn_Click(object sender, EventArgs e)
