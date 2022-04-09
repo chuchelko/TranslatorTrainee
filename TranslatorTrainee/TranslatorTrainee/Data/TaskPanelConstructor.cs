@@ -59,9 +59,10 @@ namespace TranslatorTrainee.Data
             switch (AP)
             {
                 case TaskPanelsPainter.AnswerPeek.ChoicesAnsw:
-                    FillChoicePanel(ref panel);
+                    FillChoicePanelByBtns(ref panel);
                     break;
                 case TaskPanelsPainter.AnswerPeek.TextAnsw:
+                    FillChoicePanelByTextBox(ref panel);
                     break;
                 case TaskPanelsPainter.AnswerPeek.VoiceAnsw:
                     break;
@@ -71,14 +72,53 @@ namespace TranslatorTrainee.Data
 
         }
 
-        private void FillChoicePanel(ref Panel panel)
+        private void FillChoicePanelByTextBox(ref Panel panel)
         {
-            var btn_list = new List<Button>();
+            var textBox = new TextBox();
+            textBox.Location = new Point(panel.Width / 4, panel.Height / 2 - 10);
+            textBox.Multiline = true;
+            textBox.TextAlign = HorizontalAlignment.Center;
+            textBox.Size = panel.Size / 4;
+            textBox.KeyDown += TextBox_KeyDown;
+            panel.Controls.Add(textBox);
+
+        }
+
+        private void TextBox_KeyDown(object? sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                var textbx = sender as TextBox;
+                var text = textbx?.Text;
+                textbx?.Dispose();
+
+            }
+
+        }
+
+        private void FillChoicePanelByBtns(ref Panel panel)
+        {
+            var rnd = new Random();
+            List<int> ind_list = new(){ 0, 1, 2, 3 };
             for(int i = 0; i < 4; i++)
             {
-                var btn = new Button();
-                
+                var answ_btn = new Button();
+                answ_btn.Margin = Padding.Empty;
+                answ_btn.Size = panel.Size / 4;
+                answ_btn.Location = new Point(panel.Width / 2 * (i % 2), panel.Height / 2 * (i % 2));
+                var rnd_tmp = rnd.Next(0, ind_list.Count);
+                answ_btn.Text = question.Answers[ind_list[rnd_tmp]];
+                answ_btn.Click += Answ_btn_Click;
+                ind_list.RemoveAt(rnd_tmp);
+                panel.Controls.Add(answ_btn);
             }   
+
+        }
+
+        private void Answ_btn_Click(object? sender, EventArgs e)
+        {
+            var answer_btn = sender as Button; 
+           //жду коммит Эмиля
         }
 
         private void Btn_Click(object? sender, EventArgs e)
