@@ -15,6 +15,7 @@ namespace TranslatorTrainee.Forms
         private Data.TaskPanelsPainter painter;
         private Data.CategoryLoader cloader;
         private Data.TaskPanelConstructor TPC;
+        private TextBox textBox;
 
         private float timeLeft;
         private int qCount;
@@ -56,6 +57,8 @@ namespace TranslatorTrainee.Forms
         {
             TPC = new Data.TaskPanelConstructor(QuestionPanel, AnswerPanel, cloader?._categories[categoriesBox.SelectedIndex]);
             TPC.AnswBtnClick += TPC_AnswBtnClick;
+
+            if (textBox is not null) textBox.Visible = false;
 
             scoreBtn.Visible = true;
             scoreBtn.Text = 0.ToString();
@@ -112,7 +115,7 @@ namespace TranslatorTrainee.Forms
                 timer1.Stop();
                 TPC.AnswBtnClick -= TPC_AnswBtnClick;
 
-                var textBox = new TextBox();
+                textBox = new TextBox();
                 textBox.Size = new Size(panel1.Width / 2, panel1.Height / 2);
                 textBox.Location = new Point(0 + panel1.Width / 4, 0 + panel1.Height /4 ); ;
                 textBox.Multiline = true;

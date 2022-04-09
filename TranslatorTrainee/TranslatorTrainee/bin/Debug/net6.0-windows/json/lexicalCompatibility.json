@@ -1,5 +1,3 @@
-{
-	"Questions":
 [
 	{
 		"Type": "text",
@@ -30,6 +28,55 @@
       "Художник",
       "Мастер"
     ]
-  }
+    },
+	{
+    "Type": "text",
+    "Text": "A synthetic grass tennis court is COST effective",
+    "RightAnswer": "Экономически",
+    "WrongAnswers": [
+      "Расходы",
+      "Стоимость",
+      "Издержки"
+    ]
+    },
+	{
+    "Type": "text",
+    "Text": "CNC aluminium alloy shell, small size, STRONG and durable",
+    "RightAnswer": "Прочный",
+    "WrongAnswers": [
+      "Решительный",
+      "Сильный",
+      "Значительный"
+    ]
+    },
+	{
+    "Type": "text",
+    "Text": "That coffee was way too STRONG",
+    "RightAnswer": "Крепкий",
+    "WrongAnswers": [
+      "Решительный",
+      "Сильный",
+      "Прочный"
+    ]
+    },
+	{
+    "Type": "text",
+    "Text": "We have here a BUNCH of sheeps and a chicken",
+    "RightAnswer": "Стадо",
+    "WrongAnswers": [
+      "Группа",
+      "Куча",
+      "Компания"
+    ]
+    },
+	{
+    "Type": "text",
+    "Text": "This BUNCH on the sidewalk looks pretty dangerous",
+    "RightAnswer": "Толпа",
+    "WrongAnswers": [
+      "стадо",
+      "Куча",
+      "Букет"
+    ]
+    }
 ]
-}

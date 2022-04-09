@@ -28,5 +28,11 @@
     "Count": 1,
     "Name": "Фразеологизмы",
     "Difficulty": 10
+  },
+  {
+    "FileName": "lexicalCompatibility.json",
+    "Count": 1,
+    "Name": "Лексическая сочетаемость",
+    "Difficulty": 10
   }
 ]

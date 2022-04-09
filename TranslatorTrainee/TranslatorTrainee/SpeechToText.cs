@@ -54,7 +54,7 @@ public class SpeechToText
 
     public string GetTextFromSpeech()
     {
-        var audioFileByteArray = ConvertWavToOgg(_currentFileName);
+        ConvertWavToOgg();
         
         var request = (HttpWebRequest) WebRequest.Create(
                 "https://stt.api.cloud.yandex.net/speech/v1/stt:recognize?topic=general&lang=ru-RU&folderId=b1gn2tudjjpvhi9a7ncm");
