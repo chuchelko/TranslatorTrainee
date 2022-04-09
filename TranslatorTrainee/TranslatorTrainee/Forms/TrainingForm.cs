@@ -8,27 +8,27 @@ public partial class TrainingForm : Form
 	private int qstCh;
 
 	public int QuestionChoice
-    {
-        get { return Math.Abs(qstCh); }
-        set
-        {
+	{
+		get { return Math.Abs(qstCh); }
+		set
+		{
 			qstCh = value;
 			qstCh %= 2;
 			QuestionChanged?.Invoke(QuestionChoice, EventArgs.Empty);
-        }
-    }
+		}
+	}
 
 	private int ansCh;
 	public int AnswerChoice
-    {
+	{
 		get { return Math.Abs(ansCh); }
-        set
-        {
+		set
+		{
 			ansCh = value;
 			ansCh %= 3; 
 			AnswerChanged?.Invoke(AnswerChoice, EventArgs.Empty);
-        }
-    }
+		}
+	}
 
 	private Data.CategoryLoader cloader;
 	private int qstnChoice = 0;
@@ -47,10 +47,10 @@ public partial class TrainingForm : Form
 	{
 		cloader = new Data.CategoryLoader("../../../Jsons/data1.json");
 
-        try
-        {
+		try
+		{
 			await cloader.LoadCategoriesAsync();
-        }catch (Exception ex) { }
+		}catch (Exception ex) { }
 
 		comboBox1.Items.Clear();
 		comboBox1.Items.AddRange(cloader._categories?.ToArray());
@@ -75,32 +75,32 @@ public partial class TrainingForm : Form
 		await cloader.LoadCategoriesAsync();
 	}
 
-    #region Buttons
-    private void qstnBtnRight_Click(object sender, EventArgs e)
-    {
+	#region Buttons
+	private void qstnBtnRight_Click(object sender, EventArgs e)
+	{
 		QuestionChoice += 1;
-    }
+	}
 
-    private void answBtnRight_Click(object sender, EventArgs e)
-    {
+	private void answBtnRight_Click(object sender, EventArgs e)
+	{
 		AnswerChoice += 1;
-    }
+	}
 
-    private void qstnBtnLeft_Click(object sender, EventArgs e)
-    {
+	private void qstnBtnLeft_Click(object sender, EventArgs e)
+	{
 		QuestionChoice -= 1;
-    }
+	}
 
-    private void answBtnLeft_Click(object sender, EventArgs e)
-    {
+	private void answBtnLeft_Click(object sender, EventArgs e)
+	{
 		AnswerChoice -= 1;
-    }
+	}
 
 
-    #endregion
+	#endregion
 
-    private void TrainingStart_Click(object sender, EventArgs e)
-    {
+	private void TrainingStart_Click(object sender, EventArgs e)
+	{
 
-    }
+	}
 }

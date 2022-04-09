@@ -10,12 +10,40 @@ namespace TranslatorTrainee.Data
     [Serializable]
     internal class Category
     {
-        public int Count { get; set; }
-        public string Name { get; set; }
+        private int count;
+        private string name;
+        private double difficulty;
+        public int Count
+        {   
+            get
+            {
+                return count;
+            }
+            set
+            {
+                if(value < 0 ) value = 0;
+                count = value;
+            }
+        }
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                if(string.IsNullOrEmpty(value)) 
+                    throw new ArgumentNullException("value");
+                name = value;
+            }
+        }
 
-        public double Difficulty { get; set; }
+        public double Difficulty { 
+            get { return difficulty; }
+            set
+            {
+                difficulty = value;
+            }
+        }
 
-        [JsonConstructor]
         public Category() { }
 
         public Category(string name, double diff)

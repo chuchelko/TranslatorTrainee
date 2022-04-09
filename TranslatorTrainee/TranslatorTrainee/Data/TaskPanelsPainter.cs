@@ -45,20 +45,27 @@ namespace TranslatorTrainee.Data
             if(name == "QuestionHandler")
             {
                 var qpp = (QuestionPeek)qp;
-                if(qpp == QuestionPeek.TextQuestion)
-                    taskG?.FillRectangle(
+                switch (qpp)
+                {
+                    case QuestionPeek.TextQuestion:
+                        taskG?.FillRectangle(
                         new SolidBrush(Color.Red),
                         taskRect);
-                if (qpp == QuestionPeek.VoiceQuestion)
-                    taskG?.FillRectangle(
+                        break;
+                    case QuestionPeek.VoiceQuestion:
+                        taskG?.FillRectangle(
                         new SolidBrush(Color.Blue),
                         taskRect);
-
+                        break;
+                }
                 questionPeek = qpp;
             }
             if(name == "AnswerHandler")
             {
                 var ap = (AnswerPeek)qp;
+
+
+
                 if(ap == AnswerPeek.ChoicesAnsw)
                 {
                     answG?.FillRectangle(
