@@ -31,8 +31,6 @@ partial class TrainingForm
 	private void InitializeComponent()
 	{
             this.categoriesBox = new System.Windows.Forms.ComboBox();
-            this.testBtn = new System.Windows.Forms.Button();
-            this.tstBtn2 = new System.Windows.Forms.Button();
             this.TaskPanel = new System.Windows.Forms.Panel();
             this.answBtnRight = new System.Windows.Forms.Button();
             this.AnswerPanel = new System.Windows.Forms.Panel();
@@ -51,26 +49,6 @@ partial class TrainingForm
             this.categoriesBox.Name = "categoriesBox";
             this.categoriesBox.Size = new System.Drawing.Size(386, 28);
             this.categoriesBox.TabIndex = 0;
-            // 
-            // testBtn
-            // 
-            this.testBtn.Location = new System.Drawing.Point(21, 185);
-            this.testBtn.Name = "testBtn";
-            this.testBtn.Size = new System.Drawing.Size(94, 29);
-            this.testBtn.TabIndex = 1;
-            this.testBtn.Text = "button1";
-            this.testBtn.UseVisualStyleBackColor = true;
-            this.testBtn.Click += new System.EventHandler(this.testBtn_Click);
-            // 
-            // tstBtn2
-            // 
-            this.tstBtn2.Location = new System.Drawing.Point(21, 220);
-            this.tstBtn2.Name = "tstBtn2";
-            this.tstBtn2.Size = new System.Drawing.Size(94, 29);
-            this.tstBtn2.TabIndex = 2;
-            this.tstBtn2.Text = "button1";
-            this.tstBtn2.UseVisualStyleBackColor = true;
-            this.tstBtn2.Click += new System.EventHandler(this.tstBtn2_Click);
             // 
             // TaskPanel
             // 
@@ -161,8 +139,6 @@ partial class TrainingForm
             this.Controls.Add(this.ScoreButton);
             this.Controls.Add(this.TrainingStart);
             this.Controls.Add(this.TaskPanel);
-            this.Controls.Add(this.tstBtn2);
-            this.Controls.Add(this.testBtn);
             this.Controls.Add(this.categoriesBox);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(818, 497);
@@ -179,8 +155,6 @@ partial class TrainingForm
     #endregion
 
     private ComboBox categoriesBox;
-    private Button testBtn;
-    private Button tstBtn2;
     private Panel TaskPanel;
     private Button answBtnRight;
     private Panel AnswerPanel;

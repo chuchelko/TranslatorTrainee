@@ -36,6 +36,7 @@ partial class SpeakingForm
             // listView
             // 
             this.listView.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+            this.listView.BackColor = System.Drawing.Color.DimGray;
             this.listView.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.listView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
@@ -55,6 +56,7 @@ partial class SpeakingForm
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.DarkGray;
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Margin = new System.Windows.Forms.Padding(0);
@@ -67,6 +69,7 @@ partial class SpeakingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(582, 673);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listView);

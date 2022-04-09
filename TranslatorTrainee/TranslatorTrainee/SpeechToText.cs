@@ -29,7 +29,7 @@ public class SpeechToText
 
         guid = Guid.NewGuid();
         _currentFileName = Directory.GetCurrentDirectory() + "\\Records\\record-" + guid;
-        _writer = new WaveFileWriter(_currentFileName+".wav", _waveIn.WaveFormat);
+        _writer = new WaveFileWriter(_currentFileName + ".wav", _waveIn.WaveFormat);
 
         _waveIn.StartRecording();
     }
@@ -49,15 +49,16 @@ public class SpeechToText
         info.WorkingDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Records");
         info.Arguments = $"-i record-{guid}.wav record-{guid}.ogg";
         info.UseShellExecute = false;
+        //Process.Start("ffmpeg.exe", $"-i record-{guid}.wav record-{guid}.ogg");
         Process.Start(info).WaitForExit();
     }
 
     public string GetTextFromSpeech()
     {
         ConvertWavToOgg();
-        
-        var request = (HttpWebRequest) WebRequest.Create(
-                "https://stt.api.cloud.yandex.net/speech/v1/stt:recognize?topic=general&lang=ru-RU&folderId=b1gn2tudjjpvhi9a7ncm");
+
+        var request = (HttpWebRequest)WebRequest.Create(
+        "https://stt.api.cloud.yandex.net/speech/v1/stt:recognize?topic=general&lang=ru-RU&folderId=b1gn2tudjjpvhi9a7ncm");
         var accessToken =
         "t1.9euelZqTlZLNyZXKkI6emZyPjMqMlu3rnpWal86Ym8vGi82czI2QyMfMlcjl9PdTBjpt-e8kWlWJ3fT3EzU3bfnvJFpViQ.zBKyLUeuJdkFw96PT8tj97AtMapvt8MYkraclIJVAu_D_5ZPAJmsFs5yidhj2mANmGSob8dsnrt0Ci8iamfSAw";
         request.Method = "POST";

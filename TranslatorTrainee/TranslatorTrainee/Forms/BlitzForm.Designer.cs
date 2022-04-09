@@ -133,6 +133,9 @@
             this.Controls.Add(this.startstopBtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.categoriesBox);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(818, 497);
+            this.MinimumSize = new System.Drawing.Size(818, 497);
             this.Name = "BlitzForm";
             this.Text = "BlitzForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BlitzForm_FormClosing);
