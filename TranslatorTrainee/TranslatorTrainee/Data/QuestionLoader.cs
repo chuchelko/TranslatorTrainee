@@ -27,5 +27,10 @@ namespace TranslatorTrainee.Data
 
 
         }
+
+        internal static Question GetRandomQuestion()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
