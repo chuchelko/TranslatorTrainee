@@ -1436,23 +1436,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DANIL\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DANIL\\RiderProjects\\TranslatorTraineeeeeee\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee.csproj",
       "projectName": "TranslatorTrainee",
-      "projectPath": "C:\\Users\\DANIL\\RiderProjects\\TranslatorTraineeeeeee\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee.csproj",
-      "packagesPath": "C:\\Users\\DANIL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DANIL\\RiderProjects\\TranslatorTraineeeeeee\\TranslatorTrainee\\TranslatorTrainee\\obj\\",
+      "projectPath": "C:\\Users\\User\\Source\\Repos\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Source\\Repos\\TranslatorTrainee\\TranslatorTrainee\\TranslatorTrainee\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DANIL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -1501,7 +1501,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
