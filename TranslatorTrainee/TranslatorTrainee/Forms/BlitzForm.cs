@@ -17,6 +17,7 @@ namespace TranslatorTrainee.Forms
         private Data.TaskPanelConstructor TPC;
 
         private float timeLeft;
+        private int qCount;
         private int score;
 
         public BlitzForm()
@@ -42,8 +43,6 @@ namespace TranslatorTrainee.Forms
             painter.AnswerHandler(0, EventArgs.Empty);
 
             scoreBtn.Visible = false;
-
-            timeLeft = 30F;
         }
 
         private async void BlitzForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -55,9 +54,12 @@ namespace TranslatorTrainee.Forms
         {
             TPC = new Data.TaskPanelConstructor(QuestionPanel, AnswerPanel, cloader?._categories[categoriesBox.SelectedIndex]);
             TPC.AnswBtnClick += TPC_AnswBtnClick;
+
             scoreBtn.Visible = true;
             scoreBtn.Text = 0.ToString();
+
             timeTextBox.Visible = true;
+            timeLeft = 30F;
             timer1.Start();
 
             panel1.BackColor = Color.LightGoldenrodYellow;
@@ -79,6 +81,8 @@ namespace TranslatorTrainee.Forms
                 score += 1;
             }
 
+            qCount += 1;
+
             scoreBtn.Text = score.ToString();
 
             TPC.QuestionRefresh();
@@ -93,8 +97,31 @@ namespace TranslatorTrainee.Forms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timeLeft -= 0.1F;
+            timeLeft -= 1F;
             timeTextBox.Text = Math.Round(timeLeft, 4).ToString() + "с.";
+
+            if(timeLeft == 0)
+            {
+                timer1.Stop();
+                TPC.AnswBtnClick -= TPC_AnswBtnClick;
+
+                var textBox = new TextBox();
+                textBox.Size = new Size(panel1.Width / 2, panel1.Height / 2);
+                textBox.Location = new Point(0 + panel1.Width / 4, 0 + panel1.Width / 2); ;
+                textBox.Multiline = true;
+                textBox.ReadOnly = true;
+                textBox.TextAlign = HorizontalAlignment.Center;
+
+                var text = new StringBuilder();
+                text.Append("Количество вопросов \r\n" + qCount + "\r\nКоличество правильных ответов \r\n"
+                    + score);
+                textBox.Text = text.ToString();
+
+                panel1.Controls.Remove(QuestionPanel);
+                panel1.Controls.Remove(AnswerPanel);
+                panel1.Controls.Add(textBox);
+                
+            }
         }
     }
 }
