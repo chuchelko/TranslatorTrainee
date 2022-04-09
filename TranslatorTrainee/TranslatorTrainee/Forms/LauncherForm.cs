@@ -7,6 +7,7 @@ public partial class LauncherForm : Form
     public LauncherForm()
     {
         InitializeComponent();
+        DoubleBuffered = true;
         //FormBorderStyle = FormBorderStyle.None;
     }
 
@@ -28,5 +29,8 @@ public partial class LauncherForm : Form
     private void trainBtn_Click(object sender, EventArgs e)
     {
         //Вызов формы с тренировками
+        Forms.TrainingForm trainingForm = new Forms.TrainingForm();
+        trainingForm.ShowDialog();
+
     }
 }
