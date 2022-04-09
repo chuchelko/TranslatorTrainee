@@ -13,6 +13,7 @@ namespace TranslatorTrainee.Data
         private int count;
         private string name;
         private double difficulty;
+        public string FileName { get; set; }
         public int Count
         {   
             get

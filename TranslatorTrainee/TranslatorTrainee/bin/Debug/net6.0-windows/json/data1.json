@@ -1,0 +1,32 @@
+[
+  {
+    "count": 1,
+    "fileName": "latinism.json",
+    "name": "Латинизмы",
+    "difficulty": 4.3
+  },
+  {
+    "count": 1,
+    "fileName": "numerals.json",
+    "name": "Числительные",
+    "difficulty": 7.3
+  },
+  {
+    "count": 1,
+    "fileName": "compression.json",
+    "name": "Компрессия",
+    "difficulty": 2.3
+  },
+  {
+    "count": 1,
+    "fileName": "multiTask.json",
+    "name": "Многозадачность",
+    "difficulty": 9.3
+  },
+  {
+    "count": 1,
+    "fileName": "phraseologisms.json",
+    "name": "Фразеологизмы",
+    "difficulty": 10
+  }
+]

@@ -9,40 +9,16 @@ namespace TranslatorTrainee.Data
     [Serializable]
     internal class Question
     {
-        private string _title;
-        private List<string> answers = new();
-
-        public string Title
-        {
-            get { return _title; }
-            set
-            {
-                if(string.IsNullOrEmpty(value)) 
-                    throw new ArgumentNullException(nameof(value));
-                _title = value;
-            }
-        }
-
-        public List<string> Answers
-        {
-            get { return answers; }
-            set
-            {
-                answers.AddRange(value);
-            }
-        }
+        public string Type { get; set; }
+        public string Text { get; set; }
+        public List<string> WrongAnswers { get; set; }
+        public string RightAnswer { get; set; }
 
         public Question() { }
 
-        public Question(string title, List<string> answrs)
-        {
-            Title = title;
-            Answers = answrs;
-        }
-
         public override string ToString()
         {
-            return $"{Title} {Answers.Count}";
+            return $"{Text} {WrongAnswers.Count+1}";
         }
     }
 }

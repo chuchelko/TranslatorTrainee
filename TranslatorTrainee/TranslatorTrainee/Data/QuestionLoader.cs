@@ -3,27 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace TranslatorTrainee.Data
 {
     internal class QuestionLoader
     {
-        private string _foldername = "";
+        private List<Question> _questions;
 
-        public QuestionLoader(string foldername, Category category)
+        public QuestionLoader(Category category)
         {
-            _foldername = foldername;
             Load(category);
         }
 
         private void Load(Category category)
         {
-            var lst = new List<string>();
-            Directory
-                .GetFiles(_foldername, "*", SearchOption.AllDirectories)
-                .ToList()
-                .ForEach(f => lst.Add(f));
-
+            string file = Directory
+                .GetFiles(Directory.GetCurrentDirectory() + "\\json", category.FileName, SearchOption.AllDirectories)[0];
+            using var reader = new FileStream(file, FileMode.Open, FileAccess.Read);
+            _questions = JsonSerializer.Deserialize<List<Question>>(reader)!;
+        }
+        public Question GetRandomQuestion()
+        {
+            return _questions[new Random().Next(0, _questions.Count)];
         }
     }
 }

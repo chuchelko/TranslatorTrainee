@@ -1,3 +1,4 @@
+using TranslatorTrainee.Data;
 using TranslatorTrainee.Forms;
 
 namespace TranslatorTrainee;
@@ -32,5 +33,11 @@ public partial class LauncherForm : Form
         Forms.TrainingForm trainingForm = new Forms.TrainingForm();
         trainingForm.ShowDialog();
 
+    }
+
+    private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+        QuestionLoader loader = new QuestionLoader(new Category() { FileName = "latinism.json" });
+        label1.Text = loader.GetRandomQuestion().Text;
     }
 }

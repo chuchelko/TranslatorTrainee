@@ -35,6 +35,7 @@ partial class LauncherForm
             this.speakingBtn = new System.Windows.Forms.Button();
             this.trainBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +72,7 @@ partial class LauncherForm
             this.linkLabel1.TabIndex = 0;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Вход";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // blitzBtn
             // 
@@ -116,16 +118,28 @@ partial class LauncherForm
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::TranslatorTrainee.Properties.Resources.LauncherBackground;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.trainBtn);
             this.panel1.Controls.Add(this.speakingBtn);
             this.panel1.Controls.Add(this.blitzBtn);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.MaximumSize = new System.Drawing.Size(812, 518);
+            this.panel1.MinimumSize = new System.Drawing.Size(812, 518);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(812, 518);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(299, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "label1";
             // 
             // LauncherForm
             // 
@@ -138,6 +152,7 @@ partial class LauncherForm
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
     }
@@ -151,4 +166,5 @@ partial class LauncherForm
     private Button speakingBtn;
     private Button trainBtn;
     private Panel panel1;
+    private Label label1;
 }
