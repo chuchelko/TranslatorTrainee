@@ -56,7 +56,7 @@ namespace TranslatorTrainee.Data
 
         public override string ToString()
         {
-            return $"{Name} {Count}шт. Сложность {Difficulty}";
+            return $"{Name} Сложность {Difficulty}";
         }
 
     }

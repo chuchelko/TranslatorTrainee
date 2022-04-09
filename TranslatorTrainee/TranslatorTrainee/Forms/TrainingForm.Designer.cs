@@ -37,10 +37,10 @@ partial class TrainingForm
             this.answBtnRight = new System.Windows.Forms.Button();
             this.AnswerPanel = new System.Windows.Forms.Panel();
             this.answBtnLeft = new System.Windows.Forms.Button();
-            this.qstnBtnRight = new System.Windows.Forms.Button();
             this.QuestionPanel = new System.Windows.Forms.Panel();
-            this.qstnBtnLeft = new System.Windows.Forms.Button();
             this.TrainingStart = new System.Windows.Forms.Button();
+            this.ScoreButton = new System.Windows.Forms.Button();
+            this.StopButton = new System.Windows.Forms.Button();
             this.TaskPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@ partial class TrainingForm
             // 
             // testBtn
             // 
-            this.testBtn.Location = new System.Drawing.Point(241, 409);
+            this.testBtn.Location = new System.Drawing.Point(21, 185);
             this.testBtn.Name = "testBtn";
             this.testBtn.Size = new System.Drawing.Size(94, 29);
             this.testBtn.TabIndex = 1;
@@ -64,7 +64,7 @@ partial class TrainingForm
             // 
             // tstBtn2
             // 
-            this.tstBtn2.Location = new System.Drawing.Point(444, 409);
+            this.tstBtn2.Location = new System.Drawing.Point(21, 220);
             this.tstBtn2.Name = "tstBtn2";
             this.tstBtn2.Size = new System.Drawing.Size(94, 29);
             this.tstBtn2.TabIndex = 2;
@@ -77,9 +77,7 @@ partial class TrainingForm
             this.TaskPanel.Controls.Add(this.answBtnRight);
             this.TaskPanel.Controls.Add(this.AnswerPanel);
             this.TaskPanel.Controls.Add(this.answBtnLeft);
-            this.TaskPanel.Controls.Add(this.qstnBtnRight);
             this.TaskPanel.Controls.Add(this.QuestionPanel);
-            this.TaskPanel.Controls.Add(this.qstnBtnLeft);
             this.TaskPanel.Location = new System.Drawing.Point(200, 123);
             this.TaskPanel.Name = "TaskPanel";
             this.TaskPanel.Size = new System.Drawing.Size(385, 202);
@@ -97,7 +95,7 @@ partial class TrainingForm
             // 
             // AnswerPanel
             // 
-            this.AnswerPanel.BackColor = System.Drawing.Color.White;
+            this.AnswerPanel.BackColor = System.Drawing.Color.DimGray;
             this.AnswerPanel.Location = new System.Drawing.Point(32, 110);
             this.AnswerPanel.Name = "AnswerPanel";
             this.AnswerPanel.Size = new System.Drawing.Size(321, 88);
@@ -113,16 +111,6 @@ partial class TrainingForm
             this.answBtnLeft.UseVisualStyleBackColor = true;
             this.answBtnLeft.Click += new System.EventHandler(this.answBtnLeft_Click);
             // 
-            // qstnBtnRight
-            // 
-            this.qstnBtnRight.Location = new System.Drawing.Point(359, 3);
-            this.qstnBtnRight.Name = "qstnBtnRight";
-            this.qstnBtnRight.Size = new System.Drawing.Size(23, 88);
-            this.qstnBtnRight.TabIndex = 2;
-            this.qstnBtnRight.Text = ">";
-            this.qstnBtnRight.UseVisualStyleBackColor = true;
-            this.qstnBtnRight.Click += new System.EventHandler(this.qstnBtnRight_Click);
-            // 
             // QuestionPanel
             // 
             this.QuestionPanel.BackColor = System.Drawing.Color.White;
@@ -130,16 +118,6 @@ partial class TrainingForm
             this.QuestionPanel.Name = "QuestionPanel";
             this.QuestionPanel.Size = new System.Drawing.Size(321, 88);
             this.QuestionPanel.TabIndex = 1;
-            // 
-            // qstnBtnLeft
-            // 
-            this.qstnBtnLeft.Location = new System.Drawing.Point(3, 3);
-            this.qstnBtnLeft.Name = "qstnBtnLeft";
-            this.qstnBtnLeft.Size = new System.Drawing.Size(23, 88);
-            this.qstnBtnLeft.TabIndex = 0;
-            this.qstnBtnLeft.Text = "<";
-            this.qstnBtnLeft.UseVisualStyleBackColor = true;
-            this.qstnBtnLeft.Click += new System.EventHandler(this.qstnBtnLeft_Click);
             // 
             // TrainingStart
             // 
@@ -151,12 +129,36 @@ partial class TrainingForm
             this.TrainingStart.UseVisualStyleBackColor = true;
             this.TrainingStart.Click += new System.EventHandler(this.TrainingStart_Click);
             // 
+            // ScoreButton
+            // 
+            this.ScoreButton.Enabled = false;
+            this.ScoreButton.Location = new System.Drawing.Point(660, 209);
+            this.ScoreButton.Name = "ScoreButton";
+            this.ScoreButton.Size = new System.Drawing.Size(94, 29);
+            this.ScoreButton.TabIndex = 0;
+            this.ScoreButton.Text = "Score";
+            this.ScoreButton.UseVisualStyleBackColor = true;
+            this.ScoreButton.Visible = false;
+            // 
+            // StopButton
+            // 
+            this.StopButton.Location = new System.Drawing.Point(338, 376);
+            this.StopButton.Name = "StopButton";
+            this.StopButton.Size = new System.Drawing.Size(94, 29);
+            this.StopButton.TabIndex = 5;
+            this.StopButton.Text = "Stop";
+            this.StopButton.UseVisualStyleBackColor = true;
+            this.StopButton.Visible = false;
+            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
+            // 
             // TrainingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.StopButton);
+            this.Controls.Add(this.ScoreButton);
             this.Controls.Add(this.TrainingStart);
             this.Controls.Add(this.TaskPanel);
             this.Controls.Add(this.tstBtn2);
@@ -183,8 +185,8 @@ partial class TrainingForm
     private Button answBtnRight;
     private Panel AnswerPanel;
     private Button answBtnLeft;
-    private Button qstnBtnRight;
     private Panel QuestionPanel;
-    private Button qstnBtnLeft;
     private Button TrainingStart;
+    private Button ScoreButton;
+    private Button StopButton;
 }

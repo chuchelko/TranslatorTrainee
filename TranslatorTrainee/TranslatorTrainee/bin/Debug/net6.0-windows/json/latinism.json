@@ -1,4 +1,6 @@
-[
+{
+	"Questions":
+	[
 	{
 		"Type": "text",
 		"Text": "He is the ARBITER at the top and the trouble-shooter in social conflicts below",
@@ -18,5 +20,16 @@
       "Сочленение",
       "Произношение"
     ]
+  },
+{
+    "Type": "text",
+    "Text": "Hanoi airport is small, nothing like the CAPITAL",
+    "RightAnswer": "Столичный",
+    "WrongAnswers": [
+      "Капитал",
+      "Капитальный",
+      "Главный"
+    ]
   }
-]
+  ]
+}

@@ -13,13 +13,11 @@ namespace TranslatorTrainee.Data
         public enum QuestionPeek
         {
             TextQuestion,
-            VoiceQuestion
         }
         public enum AnswerPeek
         {
             ChoicesAnsw,
             TextAnsw,
-            VoiceAnsw
         }
 
         private Rectangle taskRect;
@@ -48,15 +46,21 @@ namespace TranslatorTrainee.Data
                 switch (qpp)
                 {
                     case QuestionPeek.TextQuestion:
-                        taskG?.FillRectangle(
-                        new SolidBrush(Color.Red),
-                        taskRect);
+                        var textRect = new RectangleF(
+                            taskRect.Width / 10,
+                            taskRect.Height / 4,
+                            taskRect.Width - 2 * taskRect.Width / 10, taskRect.Height / 2
+                            );
+                        taskG?.DrawRectangle(
+                            new Pen(Color.White, 2),
+                            Rectangle.Ceiling(textRect));
+                        taskG?.DrawString(
+                            "Текстовый вопрос",
+                            new Font("Robotica", 12, FontStyle.Regular),
+                            new SolidBrush(Color.White),
+                            new Point(taskRect.Width / 10 * 3 - 10, taskRect.Height / 2 - 15));
                         break;
-                    case QuestionPeek.VoiceQuestion:
-                        taskG?.FillRectangle(
-                        new SolidBrush(Color.Blue),
-                        taskRect);
-                        break;
+                    
                 }
                 questionPeek = qpp;
             }
@@ -67,6 +71,13 @@ namespace TranslatorTrainee.Data
                 switch (ap)
                 {
                     case AnswerPeek.ChoicesAnsw:
+                        
+                        answG?.FillRectangle(
+                            new SolidBrush(Color.DimGray),
+                            answRect);
+                        answG?.DrawRectangle(
+                            new Pen(Color.Black, 2),
+                            answRect);
                         answG?.DrawLine(
                             new Pen(Color.Black, 2),
                             new Point(answRect.Width / 2, 0),
@@ -83,42 +94,34 @@ namespace TranslatorTrainee.Data
                             answRect.Width - 2 * answRect.Width / 10, answRect.Height /2
                             );
                         answG?.DrawRectangle(
-                            new Pen(Color.Black, 2),
+                            new Pen(Color.White, 2),
                             Rectangle.Ceiling(textRect));
                         answG?.DrawString(
                             "Текстовый ответ",
                             new Font("Robotica", 12, FontStyle.Regular),
-                            new SolidBrush(Color.Black),
+                            new SolidBrush(Color.White),
                             new Point(answRect.Width / 10 * 3 - 10, answRect.Height / 2 - 15));
                         break;
-                    case AnswerPeek.VoiceAnsw:
-                        answG?.FillRectangle(
-                        new SolidBrush(Color.Blue),
-                        answRect);
-                        break;
+                   
                 }
                 answerPeek = ap;
             }
         }
 
-        public void QuestionHandler(object? sender, EventArgs e)
+        public void QuestionHandler()
         {
-            var peek = sender as int?;
-            taskG?.Clear(Color.White);
+            var peek = 0;
+            taskG?.Clear(Color.DimGray);
             if(peek == 0)
             {
                 Paint(QuestionPeek.TextQuestion);
-            }
-            if(peek == 1)
-            {
-                Paint(QuestionPeek.VoiceQuestion);
             }
         }
 
         public void AnswerHandler(object? sender, EventArgs e)
         {
             var peek = sender as int?;
-            answG?.Clear(Color.White);
+            answG?.Clear(Color.DimGray);
             switch (peek)
             {
                 case 0:
@@ -126,9 +129,6 @@ namespace TranslatorTrainee.Data
                     break;
                 case 1:
                     Paint(AnswerPeek.TextAnsw);
-                    break;
-                case 2:
-                    Paint(AnswerPeek.VoiceAnsw);
                     break;
             }
         }
