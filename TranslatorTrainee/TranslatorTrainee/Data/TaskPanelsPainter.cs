@@ -64,27 +64,39 @@ namespace TranslatorTrainee.Data
             {
                 var ap = (AnswerPeek)qp;
 
-
-
-                if(ap == AnswerPeek.ChoicesAnsw)
+                switch (ap)
                 {
-                    answG?.FillRectangle(
-                        new SolidBrush(Color.Red),
-                        answRect);
-                }
-                if (ap == AnswerPeek.TextAnsw)
-                {
-                    answG?.FillRectangle(
-                        new SolidBrush(Color.Green),
-                        answRect);
-                }
-                if (ap == AnswerPeek.VoiceAnsw)
-                {
-                    answG?.FillRectangle(
+                    case AnswerPeek.ChoicesAnsw:
+                        answG?.DrawLine(
+                            new Pen(Color.Black, 2),
+                            new Point(answRect.Width / 2, 0),
+                            new Point(answRect.Width / 2, answRect.Height));
+                        answG?.DrawLine(
+                            new Pen(Color.Black, 2),
+                            new Point(0, answRect.Height / 2),
+                            new Point(answRect.Width, answRect.Height / 2));
+                        break;
+                    case AnswerPeek.TextAnsw:
+                        var textRect = new RectangleF(
+                            answRect.Width / 10,
+                            answRect.Height / 4,
+                            answRect.Width - 2 * answRect.Width / 10, answRect.Height /2
+                            );
+                        answG?.DrawRectangle(
+                            new Pen(Color.Black, 2),
+                            Rectangle.Ceiling(textRect));
+                        answG?.DrawString(
+                            "Текстовый ответ",
+                            new Font("Robotica", 12, FontStyle.Regular),
+                            new SolidBrush(Color.Black),
+                            new Point(answRect.Width / 10 * 3 - 10, answRect.Height / 2 - 15));
+                        break;
+                    case AnswerPeek.VoiceAnsw:
+                        answG?.FillRectangle(
                         new SolidBrush(Color.Blue),
                         answRect);
+                        break;
                 }
-
                 answerPeek = ap;
             }
         }
@@ -92,6 +104,7 @@ namespace TranslatorTrainee.Data
         public void QuestionHandler(object? sender, EventArgs e)
         {
             var peek = sender as int?;
+            taskG?.Clear(Color.White);
             if(peek == 0)
             {
                 Paint(QuestionPeek.TextQuestion);
@@ -105,6 +118,7 @@ namespace TranslatorTrainee.Data
         public void AnswerHandler(object? sender, EventArgs e)
         {
             var peek = sender as int?;
+            answG?.Clear(Color.White);
             switch (peek)
             {
                 case 0:
