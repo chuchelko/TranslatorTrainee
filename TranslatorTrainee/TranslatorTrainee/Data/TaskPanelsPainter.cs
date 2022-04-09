@@ -28,8 +28,6 @@ namespace TranslatorTrainee.Data
         public QuestionPeek questionPeek;
         public AnswerPeek answerPeek;
 
-
-
         public TaskPanelsPainter(Graphics TaskG, Graphics AnswG)
         {
             taskG = TaskG;
