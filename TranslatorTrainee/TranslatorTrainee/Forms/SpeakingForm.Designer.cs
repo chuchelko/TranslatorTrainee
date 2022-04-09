@@ -70,6 +70,7 @@ partial class SpeakingForm
             this.ClientSize = new System.Drawing.Size(582, 673);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listView);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(600, 720);
             this.MinimumSize = new System.Drawing.Size(600, 720);
             this.Name = "SpeakingForm";

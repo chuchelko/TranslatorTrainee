@@ -136,6 +136,9 @@ partial class LauncherForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 518);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(830, 565);
+            this.MinimumSize = new System.Drawing.Size(830, 565);
             this.Name = "LauncherForm";
             this.Text = "Launcher";
             this.panel2.ResumeLayout(false);

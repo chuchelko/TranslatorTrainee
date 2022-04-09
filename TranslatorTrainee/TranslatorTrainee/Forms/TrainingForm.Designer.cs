@@ -162,6 +162,9 @@ partial class TrainingForm
             this.Controls.Add(this.tstBtn2);
             this.Controls.Add(this.testBtn);
             this.Controls.Add(this.comboBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(818, 497);
+            this.MinimumSize = new System.Drawing.Size(818, 497);
             this.Name = "TrainingForm";
             this.Text = "TrainingForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TrainingForm_FormClosing);

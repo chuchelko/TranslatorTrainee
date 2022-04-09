@@ -9,7 +9,7 @@ namespace TranslatorTrainee.Data
 {
     internal class QuestionLoader
     {
-        public SetOfQuestions Questions;
+        public List<Question> Questions;
 
         public QuestionLoader(Category category)
         {
@@ -21,11 +21,11 @@ namespace TranslatorTrainee.Data
             string file = Directory
                 .GetFiles(Directory.GetCurrentDirectory() + "\\json", category.FileName, SearchOption.AllDirectories)[0];
             using var reader = new FileStream(file, FileMode.Open, FileAccess.Read);
-            Questions = JsonSerializer.Deserialize<SetOfQuestions>(reader)!;
+            Questions = JsonSerializer.Deserialize<List<Question>>(reader)!;
         }
         public Question GetRandomQuestion()
         {
-            return Questions.Questions[new Random().Next(0, Questions.Questions.Count)];
+            return Questions[new Random().Next(0, Questions.Count)];
         }
     }
 }

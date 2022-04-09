@@ -71,6 +71,7 @@ partial class TrackRunForm
             this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.button);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(818, 497);
             this.MinimumSize = new System.Drawing.Size(818, 497);
             this.Name = "TrackRunForm";
