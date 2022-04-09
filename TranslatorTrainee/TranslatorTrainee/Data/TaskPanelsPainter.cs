@@ -48,14 +48,34 @@ namespace TranslatorTrainee.Data
                 switch (qpp)
                 {
                     case QuestionPeek.TextQuestion:
-                        taskG?.FillRectangle(
-                        new SolidBrush(Color.Red),
-                        taskRect);
+                        var textRect = new RectangleF(
+                            taskRect.Width / 10,
+                            taskRect.Height / 4,
+                            taskRect.Width - 2 * taskRect.Width / 10, taskRect.Height / 2
+                            );
+                        taskG?.DrawRectangle(
+                            new Pen(Color.Black, 2),
+                            Rectangle.Ceiling(textRect));
+                        taskG?.DrawString(
+                            "Текстовый вопрос",
+                            new Font("Robotica", 12, FontStyle.Regular),
+                            new SolidBrush(Color.Black),
+                            new Point(taskRect.Width / 10 * 3 - 10, taskRect.Height / 2 - 15));
                         break;
                     case QuestionPeek.VoiceQuestion:
-                        taskG?.FillRectangle(
-                        new SolidBrush(Color.Blue),
-                        taskRect);
+                        var textRect1 = new RectangleF(
+                            taskRect.Width / 10,
+                            taskRect.Height / 4,
+                            taskRect.Width - 2 * taskRect.Width / 10, taskRect.Height / 2
+                            );
+                        taskG?.DrawRectangle(
+                            new Pen(Color.Black, 2),
+                            Rectangle.Ceiling(textRect1));
+                        taskG?.DrawString(
+                            "Голосовой вопрос",
+                            new Font("Robotica", 12, FontStyle.Regular),
+                            new SolidBrush(Color.Black),
+                            new Point(taskRect.Width / 10 * 3 - 10, taskRect.Height / 2 - 15));
                         break;
                 }
                 questionPeek = qpp;
@@ -92,9 +112,19 @@ namespace TranslatorTrainee.Data
                             new Point(answRect.Width / 10 * 3 - 10, answRect.Height / 2 - 15));
                         break;
                     case AnswerPeek.VoiceAnsw:
-                        answG?.FillRectangle(
-                        new SolidBrush(Color.Blue),
-                        answRect);
+                        var textRect1 = new RectangleF(
+                            answRect.Width / 10,
+                            answRect.Height / 4,
+                            answRect.Width - 2 * answRect.Width / 10, answRect.Height / 2
+                            );
+                        answG?.DrawRectangle(
+                            new Pen(Color.Black, 2),
+                            Rectangle.Ceiling(textRect1));
+                        answG?.DrawString(
+                            "Голосовой ответ",
+                            new Font("Robotica", 12, FontStyle.Regular),
+                            new SolidBrush(Color.Black),
+                            new Point(answRect.Width / 10 * 3 - 10, answRect.Height / 2 - 15));
                         break;
                 }
                 answerPeek = ap;

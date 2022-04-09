@@ -21,5 +21,15 @@
       "Произношение"
     ]
   },
+{
+    "Type": "text",
+    "Text": "Hanoi airport is small, nothing like the CAPITAL",
+    "RightAnswer": "Столичный",
+    "WrongAnswers": [
+      "Капитал",
+      "Капитальный",
+      "Главный"
+    ]
+  }
   ]
 }

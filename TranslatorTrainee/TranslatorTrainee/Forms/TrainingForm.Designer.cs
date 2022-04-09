@@ -41,6 +41,8 @@ partial class TrainingForm
             this.QuestionPanel = new System.Windows.Forms.Panel();
             this.qstnBtnLeft = new System.Windows.Forms.Button();
             this.TrainingStart = new System.Windows.Forms.Button();
+            this.ScoreButton = new System.Windows.Forms.Button();
+            this.StopButton = new System.Windows.Forms.Button();
             this.TaskPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +56,7 @@ partial class TrainingForm
             // 
             // testBtn
             // 
-            this.testBtn.Location = new System.Drawing.Point(241, 409);
+            this.testBtn.Location = new System.Drawing.Point(21, 185);
             this.testBtn.Name = "testBtn";
             this.testBtn.Size = new System.Drawing.Size(94, 29);
             this.testBtn.TabIndex = 1;
@@ -64,7 +66,7 @@ partial class TrainingForm
             // 
             // tstBtn2
             // 
-            this.tstBtn2.Location = new System.Drawing.Point(444, 409);
+            this.tstBtn2.Location = new System.Drawing.Point(21, 220);
             this.tstBtn2.Name = "tstBtn2";
             this.tstBtn2.Size = new System.Drawing.Size(94, 29);
             this.tstBtn2.TabIndex = 2;
@@ -151,12 +153,35 @@ partial class TrainingForm
             this.TrainingStart.UseVisualStyleBackColor = true;
             this.TrainingStart.Click += new System.EventHandler(this.TrainingStart_Click);
             // 
+            // ScoreButton
+            // 
+            this.ScoreButton.Enabled = false;
+            this.ScoreButton.Location = new System.Drawing.Point(660, 209);
+            this.ScoreButton.Name = "ScoreButton";
+            this.ScoreButton.Size = new System.Drawing.Size(94, 29);
+            this.ScoreButton.TabIndex = 0;
+            this.ScoreButton.Text = "Score";
+            this.ScoreButton.UseVisualStyleBackColor = true;
+            // 
+            // StopButton
+            // 
+            this.StopButton.Location = new System.Drawing.Point(338, 376);
+            this.StopButton.Name = "StopButton";
+            this.StopButton.Size = new System.Drawing.Size(94, 29);
+            this.StopButton.TabIndex = 5;
+            this.StopButton.Text = "Stop";
+            this.StopButton.UseVisualStyleBackColor = true;
+            this.StopButton.Visible = false;
+            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
+            // 
             // TrainingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.StopButton);
+            this.Controls.Add(this.ScoreButton);
             this.Controls.Add(this.TrainingStart);
             this.Controls.Add(this.TaskPanel);
             this.Controls.Add(this.tstBtn2);
@@ -184,4 +209,6 @@ partial class TrainingForm
     private Panel QuestionPanel;
     private Button qstnBtnLeft;
     private Button TrainingStart;
+    private Button ScoreButton;
+    private Button StopButton;
 }

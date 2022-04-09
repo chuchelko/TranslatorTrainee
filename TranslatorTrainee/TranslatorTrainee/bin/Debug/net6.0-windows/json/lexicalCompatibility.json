@@ -16,10 +16,20 @@
 		"Text": "Officer Smith has never used his BATON",
 		"RightAnswer": "Дубинка",
 		"WrongAnswers": [
-			"Хлеб",
+			"Батон",
 			"Маркер",
 			"Эстафетная палочка"
 		]
 	},
+	{
+    "Type": "text",
+    "Text": "This could be a record company or single ARTIST",
+    "RightAnswer": "Исполнитель",
+    "WrongAnswers": [
+      "Артист",
+      "Художник",
+      "Мастер"
+    ]
+  }
 ]
 }

@@ -1,11 +1,18 @@
-﻿namespace TranslatorTrainee.Forms;
+﻿using TranslatorTrainee.Data;
+using static TranslatorTrainee.Data.TaskPanelsPainter;
+
+namespace TranslatorTrainee.Forms;
 
 public partial class TrainingForm : Form
 {
 	public event EventHandler QuestionChanged;
 	public event EventHandler AnswerChanged;
 
+	private Panel origQ, origA;
+
 	private int qstCh;
+
+
 
 	public int QuestionChoice
 	{
@@ -31,8 +38,9 @@ public partial class TrainingForm : Form
 	}
 
 	private Data.CategoryLoader cloader;
-	private int qstnChoice = 0;
 	private Data.TaskPanelsPainter painter;
+	private Data.TaskPanelConstructor TPC;
+
 	public TrainingForm()
 	{
 		InitializeComponent();
@@ -58,6 +66,9 @@ public partial class TrainingForm : Form
 		painter = new Data.TaskPanelsPainter(QuestionPanel.CreateGraphics(), AnswerPanel.CreateGraphics());
 		QuestionChanged += painter.QuestionHandler;
 		AnswerChanged += painter.AnswerHandler;
+
+		origQ = QuestionPanel;
+		origA = AnswerPanel;
 	}
 
 	private void testBtn_Click(object sender, EventArgs e)
@@ -72,12 +83,6 @@ public partial class TrainingForm : Form
 
 	private async void TrainingForm_FormClosing(object sender, FormClosingEventArgs e)
 	{
-		//cloader._categories?.Add(new Data.Category("Латинизмы", 4.3));
-		//cloader._categories?.Add(new Data.Category("Числительные", 7.3));
-		//cloader._categories?.Add(new Data.Category("Компрессия", 2.3));
-		//cloader._categories?.Add(new Data.Category("Многозадачность", 9.3));
-		//cloader._categories?.Add(new Data.Category("Фразеологизмы", 10));
-
 		await cloader.WriteCategoriesAsync();
 	}
 
@@ -108,5 +113,37 @@ public partial class TrainingForm : Form
 	private void TrainingStart_Click(object sender, EventArgs e)
 	{
 
+		qstnBtnLeft.Enabled = qstnBtnLeft.Visible = false;
+		qstnBtnRight.Enabled = qstnBtnRight.Visible =false;
+		answBtnLeft.Enabled = answBtnLeft.Visible = false;
+		answBtnRight.Enabled = answBtnRight.Visible = false;
+
+		TPC = new Data.TaskPanelConstructor((QuestionPeek)QuestionChoice, (AnswerPeek)AnswerChoice, QuestionPanel, AnswerPanel, cloader?._categories[comboBox1.SelectedIndex]);
+		TPC.AnswBtnClick += TrainingStart_Click;
+
+		ScoreButton.Text = $"Score: {TaskPanelConstructor.score}";
+
+		TaskPanel.Controls.Remove(QuestionPanel);
+		QuestionPanel = TPC.QuestionPanelCreate();
+		TaskPanel.Controls.Add(QuestionPanel);
+		
+		TaskPanel.Controls.Remove(AnswerPanel);
+		AnswerPanel = TPC.AnswerPanelCreate();
+		TaskPanel.Controls.Add(AnswerPanel);
+		TaskPanel.Refresh();
+
+		TaskPanel.BackColor = Color.White;
+
+		TrainingStart.Text = "Next";
+		StopButton.Visible = true;
+	}
+
+	private void StopButton_Click(object sender, EventArgs e)
+	{
+		
+		TrainingStart.Enabled = false;
+		ScoreButton.BackColor = Color.LightSeaGreen;
+
+		TaskPanel.Refresh();
 	}
 }
