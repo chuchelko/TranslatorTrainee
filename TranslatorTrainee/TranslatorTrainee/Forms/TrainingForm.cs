@@ -22,6 +22,9 @@ public partial class TrainingForm : Form
 	}
 
 	private int ansCh;
+
+	private SpeechToText speechToText = new();
+	
 	public int AnswerChoice
 	{
 		get { return Math.Abs(ansCh); }
@@ -40,11 +43,6 @@ public partial class TrainingForm : Form
 	public TrainingForm()
 	{
 		InitializeComponent();
-	}
-
-	public void startRecordingButton_Click(object sender, EventArgs e)
-	{
-		 
 	}
 
 	private async void TrainingForm_Load(object sender, EventArgs e)
@@ -71,12 +69,12 @@ public partial class TrainingForm : Form
 
 	private void testBtn_Click(object sender, EventArgs e)
 	{
-
+		speechToText.StartRecordingAudio();
 	}
 
 	private void tstBtn2_Click(object sender, EventArgs e)
 	{
-
+		speechToText.StopRecordingAudio();
 	}
 
 	private async void TrainingForm_FormClosing(object sender, FormClosingEventArgs e)
