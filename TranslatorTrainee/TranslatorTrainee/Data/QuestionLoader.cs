@@ -18,11 +18,13 @@ namespace TranslatorTrainee.Data
 
         private void Load(Category category)
         {
-            var lst = new List<string>();
+            var directorylst = new List<string>();
             Directory
-                .GetFiles(_foldername, "*", SearchOption.AllDirectories)
+                .GetDirectories(category.Name, "*", SearchOption.AllDirectories)
                 .ToList()
-                .ForEach(f => lst.Add(f));
+                .ForEach(d => directorylst.Add(d)); 
+
+
 
         }
     }
