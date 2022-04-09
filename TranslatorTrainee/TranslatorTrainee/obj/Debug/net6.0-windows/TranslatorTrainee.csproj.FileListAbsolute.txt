@@ -66,3 +66,4 @@ C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee
 C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\VisioForge.Libs.dll
 C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\VisioForge.MediaFramework.dll
 C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\VisioForge.Types.dll
+C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.Forms.BlitzForm.resources

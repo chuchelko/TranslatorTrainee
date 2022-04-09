@@ -11,16 +11,12 @@ public partial class TrainingForm : Form
 	private Panel origQ, origA;
 
 	private int qstCh;
-
-
-
 	public int QuestionChoice
 	{
 		get { return Math.Abs(qstCh); }
 		set
 		{
 			qstCh = value;
-			qstCh %= 2;
 			QuestionChanged?.Invoke(QuestionChoice, EventArgs.Empty);
 		}
 	}
@@ -32,7 +28,7 @@ public partial class TrainingForm : Form
 		set
 		{
 			ansCh = value;
-			ansCh %= 3; 
+			ansCh %= 2; 
 			AnswerChanged?.Invoke(AnswerChoice, EventArgs.Empty);
 		}
 	}
@@ -62,9 +58,11 @@ public partial class TrainingForm : Form
 
 		comboBox1.Items.Clear();
 		comboBox1.Items.AddRange(cloader._categories?.ToArray());
+		comboBox1.SelectedIndex = 0;
 
 		painter = new Data.TaskPanelsPainter(QuestionPanel.CreateGraphics(), AnswerPanel.CreateGraphics());
-		QuestionChanged += painter.QuestionHandler;
+		//QuestionChanged += painter.QuestionHandler;
+		painter.QuestionHandler();
 		AnswerChanged += painter.AnswerHandler;
 
 		origQ = QuestionPanel;
@@ -99,10 +97,10 @@ public partial class TrainingForm : Form
 
 	private void qstnBtnLeft_Click(object sender, EventArgs e)
 	{
-		QuestionChoice -= 1;
-	}
 
-	private void answBtnLeft_Click(object sender, EventArgs e)
+    }
+
+    private void answBtnLeft_Click(object sender, EventArgs e)
 	{
 		AnswerChoice -= 1;
 	}
@@ -112,16 +110,13 @@ public partial class TrainingForm : Form
 
 	private void TrainingStart_Click(object sender, EventArgs e)
 	{
-
-		qstnBtnLeft.Enabled = qstnBtnLeft.Visible = false;
-		qstnBtnRight.Enabled = qstnBtnRight.Visible =false;
 		answBtnLeft.Enabled = answBtnLeft.Visible = false;
 		answBtnRight.Enabled = answBtnRight.Visible = false;
 
 		TPC = new Data.TaskPanelConstructor((QuestionPeek)QuestionChoice, (AnswerPeek)AnswerChoice, QuestionPanel, AnswerPanel, cloader?._categories[comboBox1.SelectedIndex]);
-		TPC.AnswBtnClick += TrainingStart_Click;
 
-		ScoreButton.Text = $"Score: {TaskPanelConstructor.score}";
+		ScoreButton.Visible = true;
+		ScoreButton.Text = $"{TaskPanelConstructor.score}";
 
 		TaskPanel.Controls.Remove(QuestionPanel);
 		QuestionPanel = TPC.QuestionPanelCreate();
@@ -143,6 +138,9 @@ public partial class TrainingForm : Form
 		
 		TrainingStart.Enabled = false;
 		ScoreButton.BackColor = Color.LightSeaGreen;
+		TPC.textBox?.Dispose();
+
+		ScoreButton.Text = $"{TaskPanelConstructor.score}";
 
 		TaskPanel.Refresh();
 	}

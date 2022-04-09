@@ -12,14 +12,16 @@ namespace TranslatorTrainee.Data
 
         private TaskPanelsPainter.QuestionPeek QP;
         private TaskPanelsPainter.AnswerPeek AP;
-        private Panel origQ, origA;
+        private Panel origQ, origA, thisQ, thisA;
         private Question question;
         private QuestionLoader questionLoader;
+
+        public TextBox textBox;
 
         public static int score = 0;
         public TaskPanelConstructor(TaskPanelsPainter.QuestionPeek qp, TaskPanelsPainter.AnswerPeek ap, Panel origQ, Panel origA, Category category)
         {
-            QP = qp;
+            QP = 0;
             AP = ap;
             this.origQ = origQ;
             this.origA = origA;
@@ -45,15 +47,9 @@ namespace TranslatorTrainee.Data
                     label.Location = new Point(0, panel.Height / 2);
                     panel.Controls.Add(label);
                     break;
-                case TaskPanelsPainter.QuestionPeek.VoiceQuestion:
-                    var btn = new Button();
-                    btn.Text = "Play question";
-                    btn.Size = panel.Size / 4;
-                    btn.Location = new Point(panel.Width / 2 - btn.Width, panel.Height / 2);
-                    btn.Click += Btn_Click;
-                    panel.Controls.Add(btn);
-                    break;
             }
+
+            thisQ = panel;
 
             return panel;
         }
@@ -73,9 +69,9 @@ namespace TranslatorTrainee.Data
                 case TaskPanelsPainter.AnswerPeek.TextAnsw:
                     FillChoicePanelByTextBox(ref panel);
                     break;
-                case TaskPanelsPainter.AnswerPeek.VoiceAnsw:
-                    break;
             }
+
+            thisA = panel;
 
             return panel;
 
@@ -83,13 +79,13 @@ namespace TranslatorTrainee.Data
 
         private void FillChoicePanelByTextBox(ref Panel panel)
         {
-            var textBox = new TextBox();
+            textBox = new TextBox();
             textBox.Location = new Point(panel.Width / 8 - 20, panel.Height / 2 - 10);
             textBox.PlaceholderText = "Введите ответ";
-            textBox.Multiline = true;
+            textBox.Multiline = false;
             textBox.TextAlign = HorizontalAlignment.Center;
             textBox.Size = new Size(panel.Width - panel.Width / 8, panel.Height / 4);
-            textBox.KeyDown += TextBox_KeyDown;
+            textBox.KeyUp += TextBox_KeyDown;
             panel.Controls.Add(textBox);
         }
 
@@ -99,23 +95,26 @@ namespace TranslatorTrainee.Data
             {
                 var textbx = sender as TextBox;
                 var text = textbx?.Text;
-                if(text.ToLower() == question.RightAnswer.ToLower())
+                text.TrimEnd('\n', '\r');
+                if (text.ToLower() == question.RightAnswer.ToLower())
                 {
-                    origQ.BackColor = Color.LightGreen;
+                    thisA.BackColor = Color.LightGreen;
                     score += 1;
+                    textbx?.Dispose();
                 }
                 else
                 {
-                    origQ.BackColor = Color.LightPink;
+                    textbx.Text = string.Empty;
+                    thisA.BackColor = Color.LightPink;
                 }
 
-                textbx?.Dispose();
             }
 
         }
 
         private void FillChoicePanelByBtns(ref Panel panel)
         {
+            var rightAnswBtn = new Button();
             var rnd = new Random();
             var answers = question.WrongAnswers;
             answers.Add(question.RightAnswer);
@@ -130,20 +129,29 @@ namespace TranslatorTrainee.Data
                 answ_btn.Location = new Point(panel.Width / 2 * (i % 2), panel.Height / 2 * j);
                 var rnd_tmp = rnd.Next(0, ind_list.Count);
                 answ_btn.Text = answers[ind_list[rnd_tmp]];
-                answ_btn.Click += Answ_btn_Click;
+                if(answ_btn.Text == question.RightAnswer)
+                {
+                    rightAnswBtn = answ_btn;
+                }
+                rightAnswBtn.Click += Answ_btn_Click;
                 ind_list.RemoveAt(rnd_tmp);
                 panel.Controls.Add(answ_btn);
                 if (i >= 1) j = 1;
-            }   
+            }
+
+            thisA = panel;
 
         }
 
+        private bool isScoreChanged = false;
+
         private void Answ_btn_Click(object? sender, EventArgs e)
         {
-           var answer_btn = sender as Button; 
-           if(answer_btn.Text == question.RightAnswer)
+            var answer_btn = sender as Button;
+            if (!isScoreChanged)
             {
-                score+=1;
+                score += 1;
+                isScoreChanged = true;
             }
         }
 
