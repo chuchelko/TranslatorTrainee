@@ -37,6 +37,7 @@
             this.scoreBtn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timeTextBox = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,12 +106,28 @@
             this.timeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.timeTextBox.Visible = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "5 c.",
+            "10 с.",
+            "15 с.",
+            "20 с.",
+            "25 с.",
+            "30 с."});
+            this.comboBox1.Location = new System.Drawing.Point(614, 281);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.TabIndex = 5;
+            // 
             // BlitzForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.timeTextBox);
             this.Controls.Add(this.scoreBtn);
             this.Controls.Add(this.startstopBtn);
@@ -136,5 +153,6 @@
         private Button scoreBtn;
         private System.Windows.Forms.Timer timer1;
         private TextBox timeTextBox;
+        private ComboBox comboBox1;
     }
 }

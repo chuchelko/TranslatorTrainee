@@ -38,6 +38,8 @@ namespace TranslatorTrainee.Forms
             categoriesBox.Items.AddRange(cloader._categories?.ToArray());
             categoriesBox.SelectedIndex = 0;
 
+            comboBox1.SelectedIndex = 2;
+
             painter = new Data.TaskPanelsPainter(QuestionPanel.CreateGraphics(), AnswerPanel.CreateGraphics());
             painter.QuestionHandler();
             painter.AnswerHandler(0, EventArgs.Empty);
@@ -59,8 +61,13 @@ namespace TranslatorTrainee.Forms
             scoreBtn.Text = 0.ToString();
 
             timeTextBox.Visible = true;
-            timeLeft = 30F;
+            var time = comboBox1.SelectedItem.ToString();
+            var split = time?.Split(" ");
+
+            float.TryParse(split[0], out timeLeft);
+            comboBox1.Visible = false;
             timer1.Start();
+            timeTextBox.Text = timeLeft.ToString() + "c.";
 
             panel1.BackColor = Color.LightGoldenrodYellow;
             panel1.Controls.Remove(QuestionPanel);
@@ -107,7 +114,7 @@ namespace TranslatorTrainee.Forms
 
                 var textBox = new TextBox();
                 textBox.Size = new Size(panel1.Width / 2, panel1.Height / 2);
-                textBox.Location = new Point(0 + panel1.Width / 4, 0 + panel1.Width / 2); ;
+                textBox.Location = new Point(0 + panel1.Width / 4, 0 + panel1.Height /4 ); ;
                 textBox.Multiline = true;
                 textBox.ReadOnly = true;
                 textBox.TextAlign = HorizontalAlignment.Center;
