@@ -1,1 +1,27 @@
-[{"Name":"\u041B\u0430\u0442\u0438\u043D\u0438\u0437\u043C\u044B","Difficulty":5},{"Name":"\u0427\u0438\u0441\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435","Difficulty":5},{"Name":"\u041A\u043E\u043C\u043F\u0440\u0435\u0441\u0441\u0438\u044F","Difficulty":5},{"Name":"\u041C\u043D\u043E\u0433\u043E\u0437\u0430\u0434\u0430\u0447\u043D\u043E\u0441\u0442\u044C","Difficulty":5},{"Name":"\u0424\u0440\u0430\u0437\u0435\u043E\u043B\u043E\u0433\u0438\u0437\u043C\u044B","Difficulty":5}]
+[
+  {
+    "Count": 1,
+    "Name": "Латинизмы",
+    "Difficulty": 4.3
+  },
+  {
+    "Count": 1,
+    "Name": "Числительные",
+    "Difficulty": 7.3
+  },
+  {
+    "Count": 1,
+    "Name": "Компрессия",
+    "Difficulty": 2.3
+  },
+  {
+    "Count": 1,
+    "Name": "Многозадачность",
+    "Difficulty": 9.3
+  },
+  {
+    "Count": 1,
+    "Name": "Фразеологизмы",
+    "Difficulty": 10
+  }
+]

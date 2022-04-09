@@ -72,7 +72,13 @@ public partial class TrainingForm : Form
 
 	private async void TrainingForm_FormClosing(object sender, FormClosingEventArgs e)
 	{
-		await cloader.LoadCategoriesAsync();
+		//cloader._categories?.Add(new Data.Category("Латинизмы", 4.3));
+		//cloader._categories?.Add(new Data.Category("Числительные", 7.3));
+		//cloader._categories?.Add(new Data.Category("Компрессия", 2.3));
+		//cloader._categories?.Add(new Data.Category("Многозадачность", 9.3));
+		//cloader._categories?.Add(new Data.Category("Фразеологизмы", 10));
+
+		await cloader.WriteCategoriesAsync();
 	}
 
 	#region Buttons

@@ -47,7 +47,7 @@ namespace TranslatorTrainee.Data
                     Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.All),
                     WriteIndented = true,
                 };
-                await JsonSerializer.SerializeAsync(reader, _categories);
+                await JsonSerializer.SerializeAsync(reader, _categories, jsonSerializerOptions);
             }
         }
     }

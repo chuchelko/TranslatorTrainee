@@ -55,9 +55,7 @@ namespace TranslatorTrainee.Data
 
         public override string ToString()
         {
-            var res = new StringBuilder();
-            res.Append(Name + " " + Count + "шт. " + Difficulty);
-            return res.ToString();
+            return $"{Name} {Count}шт. Сложность {Difficulty}";
         }
 
     }
