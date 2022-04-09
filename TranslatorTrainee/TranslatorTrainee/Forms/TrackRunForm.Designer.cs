@@ -30,13 +30,15 @@ partial class TrackRunForm
     {
             this.button = new System.Windows.Forms.Button();
             this.timerLabel = new System.Windows.Forms.Label();
+            this.recordedTextBox = new System.Windows.Forms.TextBox();
+            this.translationTextBox = new System.Windows.Forms.TextBox();
+            this.originalTextBox = new System.Windows.Forms.TextBox();
             this.timeLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button
             // 
-            this.button.Location = new System.Drawing.Point(366, 283);
+            this.button.Location = new System.Drawing.Point(366, 368);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(89, 79);
             this.button.TabIndex = 0;
@@ -49,36 +51,62 @@ partial class TrackRunForm
             this.timerLabel.AutoSize = true;
             this.timerLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.timerLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.timerLabel.Location = new System.Drawing.Point(366, 186);
+            this.timerLabel.Location = new System.Drawing.Point(408, 328);
             this.timerLabel.Name = "timerLabel";
             this.timerLabel.Size = new System.Drawing.Size(0, 41);
             this.timerLabel.TabIndex = 1;
             // 
+            // recordedTextBox
+            // 
+            this.recordedTextBox.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.recordedTextBox.Location = new System.Drawing.Point(12, 12);
+            this.recordedTextBox.Multiline = true;
+            this.recordedTextBox.Name = "recordedTextBox";
+            this.recordedTextBox.ReadOnly = true;
+            this.recordedTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.recordedTextBox.Size = new System.Drawing.Size(241, 309);
+            this.recordedTextBox.TabIndex = 4;
+            // 
+            // translationTextBox
+            // 
+            this.translationTextBox.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.translationTextBox.Location = new System.Drawing.Point(278, 12);
+            this.translationTextBox.Multiline = true;
+            this.translationTextBox.Name = "translationTextBox";
+            this.translationTextBox.ReadOnly = true;
+            this.translationTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.translationTextBox.Size = new System.Drawing.Size(241, 309);
+            this.translationTextBox.TabIndex = 5;
+            // 
+            // originalTextBox
+            // 
+            this.originalTextBox.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.originalTextBox.Location = new System.Drawing.Point(547, 12);
+            this.originalTextBox.Multiline = true;
+            this.originalTextBox.Name = "originalTextBox";
+            this.originalTextBox.ReadOnly = true;
+            this.originalTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.originalTextBox.Size = new System.Drawing.Size(241, 309);
+            this.originalTextBox.TabIndex = 6;
+            // 
             // timeLabel
             // 
             this.timeLabel.AutoSize = true;
-            this.timeLabel.Location = new System.Drawing.Point(384, 260);
+            this.timeLabel.Location = new System.Drawing.Point(384, 345);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(50, 20);
             this.timeLabel.TabIndex = 2;
             this.timeLabel.Text = "label1";
             this.timeLabel.Visible = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
-            // 
             // TrackRunForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.originalTextBox);
+            this.Controls.Add(this.translationTextBox);
+            this.Controls.Add(this.recordedTextBox);
             this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.button);
@@ -98,6 +126,8 @@ partial class TrackRunForm
 
     private Button button;
     private Label timerLabel;
+    private TextBox recordedTextBox;
+    private TextBox translationTextBox;
+    private TextBox originalTextBox;
     private Label timeLabel;
-    private Label label1;
 }

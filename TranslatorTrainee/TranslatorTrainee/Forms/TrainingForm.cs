@@ -69,12 +69,12 @@ public partial class TrainingForm : Form
 
 	private void testBtn_Click(object sender, EventArgs e)
 	{
-		speechToText.StartRecordingAudio();
+		//speechToText.StartRecordingAudio();
 	}
 
 	private void tstBtn2_Click(object sender, EventArgs e)
 	{
-		speechToText.StopRecordingAudio();
+		//speechToText.StopRecordingAudio();
 	}
 
 	private async void TrainingForm_FormClosing(object sender, FormClosingEventArgs e)

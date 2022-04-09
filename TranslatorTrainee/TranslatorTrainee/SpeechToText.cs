@@ -49,7 +49,6 @@ public class SpeechToText
         info.WorkingDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Records");
         info.Arguments = $"-i record-{guid}.wav record-{guid}.ogg";
         info.UseShellExecute = false;
-        //Process.Start("ffmpeg.exe", $"-i record-{guid}.wav record-{guid}.ogg");
         Process.Start(info).WaitForExit();
     }
 

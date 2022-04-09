@@ -16,7 +16,6 @@ public partial class TrackRunForm : Form
 {
     public string path;
     public string name;
-    private bool playing = false;
     System.Timers.Timer timer = new System.Timers.Timer();
     public TrackRunForm()
     {
@@ -71,14 +70,29 @@ public partial class TrackRunForm : Form
         time = time.Add(new TimeSpan(0, 0, 1));
     }
 
+    string text;
+    bool need_text = true;
     private void SoundDurationTimer_Elapsed(object? sender, System.Timers.ElapsedEventArgs e)
     {
         timeLabel.Invoke(delegate () { timeLabel.Visible = true; });
         timeLabel.Invoke(delegate () { timeLabel.Text = $"{time.Minute}:{time.Second}/{duration.Minute}:{duration.Second}"; });
-        if(time.Second == 5)
+        if(time.Second == duration.Second)
         {
             speechToText.StopRecordingAudio();
-            label1.Invoke(delegate () { label1.Text = speechToText.GetTextFromSpeech(); });
+            //label1.Invoke(delegate () { label1.Text = speechToText.GetTextFromSpeech(); });
+            if (need_text)
+            {
+                need_text = false;
+                text = speechToText.GetTextFromSpeech();
+
+            }
+            recordedTextBox.Invoke(delegate() { recordedTextBox.Text = text; });
+            originalTextBox.Invoke(delegate () { originalTextBox.Text = string.Join("", File.ReadAllLines(Directory.GetFiles(path, "*Text.txt")[0])); });
+            translationTextBox.Invoke(delegate () { translationTextBox.Text = string.Join("", File.ReadAllLines(Directory.GetFiles(path, "*Translation.txt")[0])); });
+
+            soundDurationTimer.Elapsed -= SoundDurationTimer_Elapsed;
+            soundDurationTimer.Stop();
+            return;
         }
         time = time.Add(new TimeSpan(0, 0, 1));
 

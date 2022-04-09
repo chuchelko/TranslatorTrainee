@@ -40,3 +40,4 @@ C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\
 C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\ref\TranslatorTrainee.dll
 C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.pdb
 C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.genruntimeconfig.cache
+C:\Users\Emil\Desktop\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.Forms.BlitzForm.resources
