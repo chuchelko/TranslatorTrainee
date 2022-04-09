@@ -56,3 +56,13 @@ C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee
 C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\ref\TranslatorTrainee.dll
 C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.pdb
 C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\obj\Debug\net6.0-windows\TranslatorTrainee.genruntimeconfig.cache
+C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\System.Private.ServiceModel.dll
+C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\System.ServiceModel.Http.dll
+C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\System.ServiceModel.NetTcp.dll
+C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\System.ServiceModel.Primitives.dll
+C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\System.ServiceModel.dll
+C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\System.ServiceModel.Security.dll
+C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\VisioForge.Core.dll
+C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\VisioForge.Libs.dll
+C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\VisioForge.MediaFramework.dll
+C:\Users\User\Source\Repos\TranslatorTrainee\TranslatorTrainee\TranslatorTrainee\bin\Debug\net6.0-windows\VisioForge.Types.dll

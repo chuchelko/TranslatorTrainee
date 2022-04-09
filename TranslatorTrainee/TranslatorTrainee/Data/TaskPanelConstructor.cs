@@ -107,7 +107,7 @@ namespace TranslatorTrainee.Data
                 answ_btn.Size = panel.Size / 4;
                 answ_btn.Location = new Point(panel.Width / 2 * (i % 2), panel.Height / 2 * (i % 2));
                 var rnd_tmp = rnd.Next(0, ind_list.Count);
-                answ_btn.Text = question.Answers[ind_list[rnd_tmp]];
+              //  answ_btn.Text = question.Answers[ind_list[rnd_tmp]];
                 answ_btn.Click += Answ_btn_Click;
                 ind_list.RemoveAt(rnd_tmp);
                 panel.Controls.Add(answ_btn);

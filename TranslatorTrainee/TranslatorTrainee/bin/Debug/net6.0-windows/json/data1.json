@@ -1,31 +1,31 @@
 [
   {
-    "Count": 1,
     "FileName": "latinism.json",
+    "Count": 1,
     "Name": "Латинизмы",
     "Difficulty": 4.3
   },
   {
-    "Count": 1,
     "FileName": "numerals.json",
+    "Count": 1,
     "Name": "Числительные",
     "Difficulty": 7.3
   },
   {
-    "Count": 1,
     "FileName": "compression.json",
+    "Count": 1,
     "Name": "Компрессия",
     "Difficulty": 2.3
   },
   {
-    "Count": 1,
     "FileName": "multiTask.json",
+    "Count": 1,
     "Name": "Многозадачность",
     "Difficulty": 9.3
   },
   {
-    "Count": 1,
     "FileName": "phraseologisms.json",
+    "Count": 1,
     "Name": "Фразеологизмы",
     "Difficulty": 10
   }
