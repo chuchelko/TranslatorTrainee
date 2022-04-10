@@ -55,6 +55,8 @@ namespace TranslatorTrainee.Forms
 
         private void startstopBtn_Click(object sender, EventArgs e)
         {
+            startstopBtn.Visible = false;
+
             TPC = new Data.TaskPanelConstructor(QuestionPanel, AnswerPanel, cloader?._categories[categoriesBox.SelectedIndex]);
             TPC.AnswBtnClick += TPC_AnswBtnClick;
 
@@ -130,7 +132,8 @@ namespace TranslatorTrainee.Forms
                 panel1.Controls.Remove(QuestionPanel);
                 panel1.Controls.Remove(AnswerPanel);
                 panel1.Controls.Add(textBox);
-                
+
+                startstopBtn.Visible = true;
             }
         }
     }

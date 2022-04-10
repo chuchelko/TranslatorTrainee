@@ -39,6 +39,7 @@ partial class TrainingForm
             this.TrainingStart = new System.Windows.Forms.Button();
             this.ScoreButton = new System.Windows.Forms.Button();
             this.StopButton = new System.Windows.Forms.Button();
+            this.nextBtn = new System.Windows.Forms.Button();
             this.TaskPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,9 +111,9 @@ partial class TrainingForm
             // ScoreButton
             // 
             this.ScoreButton.Enabled = false;
-            this.ScoreButton.Location = new System.Drawing.Point(660, 209);
+            this.ScoreButton.Location = new System.Drawing.Point(628, 195);
             this.ScoreButton.Name = "ScoreButton";
-            this.ScoreButton.Size = new System.Drawing.Size(94, 29);
+            this.ScoreButton.Size = new System.Drawing.Size(128, 75);
             this.ScoreButton.TabIndex = 0;
             this.ScoreButton.Text = "Score";
             this.ScoreButton.UseVisualStyleBackColor = true;
@@ -129,12 +130,24 @@ partial class TrainingForm
             this.StopButton.Visible = false;
             this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
+            // nextBtn
+            // 
+            this.nextBtn.Location = new System.Drawing.Point(338, 341);
+            this.nextBtn.Name = "nextBtn";
+            this.nextBtn.Size = new System.Drawing.Size(94, 29);
+            this.nextBtn.TabIndex = 6;
+            this.nextBtn.Text = "Next";
+            this.nextBtn.UseVisualStyleBackColor = true;
+            this.nextBtn.Visible = false;
+            this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
+            // 
             // TrainingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.nextBtn);
             this.Controls.Add(this.StopButton);
             this.Controls.Add(this.ScoreButton);
             this.Controls.Add(this.TrainingStart);
@@ -163,4 +176,5 @@ partial class TrainingForm
     private Button TrainingStart;
     private Button ScoreButton;
     private Button StopButton;
+    private Button nextBtn;
 }

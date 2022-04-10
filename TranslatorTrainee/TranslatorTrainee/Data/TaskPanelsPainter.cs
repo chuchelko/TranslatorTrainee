@@ -108,12 +108,8 @@ namespace TranslatorTrainee.Data
 
         public void QuestionHandler()
         {
-            var peek = 0;
             taskG?.Clear(Color.DimGray);
-            if(peek == 0)
-            {
-                Paint(QuestionPeek.TextQuestion);
-            }
+            Paint(QuestionPeek.TextQuestion);
         }
 
         public void AnswerHandler(object? sender, EventArgs e)

@@ -9,6 +9,7 @@ namespace TranslatorTrainee.Data
     internal class TaskPanelConstructor
     {
         public event EventHandler AnswBtnClick;
+        public event EventHandler TextBoxEnter;
 
         private TaskPanelsPainter.QuestionPeek QP;
         private TaskPanelsPainter.AnswerPeek AP;
@@ -171,16 +172,13 @@ namespace TranslatorTrainee.Data
                 text.TrimEnd('\n', '\r');
                 if (text.ToLower() == question.RightAnswer.ToLower())
                 {
-                    thisA.BackColor = Color.LightGreen;
-                    score += 1;
-                    textbx?.Dispose();
+                    TextBoxEnter.Invoke(textbx, EventArgs.Empty);
                 }
                 else
                 {
                     textbx.Text = string.Empty;
                     thisA.BackColor = Color.LightPink;
                 }
-
             }
 
         }
@@ -202,34 +200,13 @@ namespace TranslatorTrainee.Data
                 answ_btn.Location = new Point(panel.Width / 2 * (i % 2), panel.Height / 2 * j);
                 var rnd_tmp = rnd.Next(0, ind_list.Count);
                 answ_btn.Text = answers[ind_list[rnd_tmp]];
-                if(answ_btn.Text == question.RightAnswer)
-                {
-                    rightAnswBtn = answ_btn;
-                }
-                rightAnswBtn.Click += Answ_btn_Click;
+                answ_btn.Click += Answ_btn_Click1;
                 ind_list.RemoveAt(rnd_tmp);
                 panel.Controls.Add(answ_btn);
                 if (i >= 1) j = 1;
             }
 
             thisA = panel;
-        }
-
-        private bool isScoreChanged = false;
-
-        private void Answ_btn_Click(object? sender, EventArgs e)
-        {
-            var answer_btn = sender as Button;
-            if (!isScoreChanged)
-            {
-                score += 1;
-                isScoreChanged = true;
-            }
-        }
-
-        private void Btn_Click(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }
