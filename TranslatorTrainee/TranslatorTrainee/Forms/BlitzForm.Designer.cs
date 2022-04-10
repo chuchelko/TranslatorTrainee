@@ -33,8 +33,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.AnswerPanel = new System.Windows.Forms.Panel();
             this.QuestionPanel = new System.Windows.Forms.Panel();
-            this.startstopBtn = new System.Windows.Forms.Button();
-            this.scoreBtn = new System.Windows.Forms.Button();
+            this.startstopBtn = new TranslatorTrainee.CustomButton();
+            this.scoreBtn = new TranslatorTrainee.CustomButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timeTextBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -74,22 +74,43 @@
             // 
             // startstopBtn
             // 
+            this.startstopBtn.BackColor = System.Drawing.Color.Turquoise;
+            this.startstopBtn.BackgroundColor = System.Drawing.Color.Turquoise;
+            this.startstopBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.startstopBtn.BorderRadius = 10;
+            this.startstopBtn.BorderSize = 0;
+            this.startstopBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startstopBtn.Font = new System.Drawing.Font("Raleway ExtraBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.startstopBtn.ForeColor = System.Drawing.Color.White;
             this.startstopBtn.Location = new System.Drawing.Point(290, 366);
             this.startstopBtn.Name = "startstopBtn";
             this.startstopBtn.Size = new System.Drawing.Size(217, 72);
             this.startstopBtn.TabIndex = 2;
             this.startstopBtn.Text = "Start!";
+            this.startstopBtn.TextColor = System.Drawing.Color.White;
             this.startstopBtn.UseVisualStyleBackColor = true;
             this.startstopBtn.Click += new System.EventHandler(this.startstopBtn_Click);
             // 
             // scoreBtn
             // 
-            this.scoreBtn.Location = new System.Drawing.Point(628, 140);
+            this.scoreBtn.BackColor = System.Drawing.Color.Turquoise;
+            this.scoreBtn.BackgroundColor = System.Drawing.Color.Turquoise;
+            this.scoreBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.scoreBtn.BorderRadius = 5;
+            this.scoreBtn.BorderSize = 0;
+            this.scoreBtn.Enabled = false;
+            this.scoreBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.scoreBtn.Font = new System.Drawing.Font("Lucida Console", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.scoreBtn.ForeColor = System.Drawing.Color.White;
+            this.scoreBtn.Location = new System.Drawing.Point(614, 195);
             this.scoreBtn.Name = "scoreBtn";
-            this.scoreBtn.Size = new System.Drawing.Size(118, 42);
-            this.scoreBtn.TabIndex = 3;
+            this.scoreBtn.Size = new System.Drawing.Size(151, 75);
+            this.scoreBtn.TabIndex = 0;
             this.scoreBtn.Text = "Score";
-            this.scoreBtn.UseVisualStyleBackColor = true;
+            this.scoreBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.scoreBtn.TextColor = System.Drawing.Color.White;
+            this.scoreBtn.UseVisualStyleBackColor = false;
+            this.scoreBtn.Visible = false;
             // 
             // timer1
             // 
@@ -152,8 +173,8 @@
         private Panel panel1;
         private Panel AnswerPanel;
         private Panel QuestionPanel;
-        private Button startstopBtn;
-        private Button scoreBtn;
+        private CustomButton startstopBtn;
+        private CustomButton scoreBtn;
         private System.Windows.Forms.Timer timer1;
         private TextBox timeTextBox;
         private ComboBox comboBox1;

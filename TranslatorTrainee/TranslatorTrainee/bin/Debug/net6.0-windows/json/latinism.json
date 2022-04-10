@@ -42,7 +42,7 @@
   {
     "Type": "text",
     "Text": "The building requires CAPITAL repairs",
-    "RightAnswer": "Капиталтный",
+    "RightAnswer": "Капитальный",
     "WrongAnswers": [
       "Прописной",
       "Столичный",

@@ -135,7 +135,7 @@ public partial class TrainingForm : Form
         TaskPanel.Controls.Add(AnswerPanel);
         TaskPanel.Refresh();
 
-        TaskPanel.BackColor = Color.White;
+        TaskPanel.BackColor = Color.PaleTurquoise;
         StopButton.Visible = true;
         StopButton.Enabled = true;
         TrainingStart.Visible = false;
@@ -208,6 +208,7 @@ public partial class TrainingForm : Form
         TaskPanel.Controls.Add(textBox);
 
         StopButton.Enabled = false;
+        StopButton.Visible = false;
         nextBtn.Visible = false;
         TrainingStart.Visible = true;
     }

@@ -74,7 +74,7 @@ namespace TranslatorTrainee.Forms
             timer1.Start();
             timeTextBox.Text = timeLeft.ToString() + "c.";
 
-            panel1.BackColor = Color.LightGoldenrodYellow;
+            panel1.BackColor = Color.PaleTurquoise;
             panel1.Controls.Remove(QuestionPanel);
             QuestionPanel = TPC.BlitzQuestionPanelCreate();
             panel1.Controls.Add(QuestionPanel);
@@ -135,6 +135,11 @@ namespace TranslatorTrainee.Forms
 
                 startstopBtn.Visible = true;
             }
+        }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
